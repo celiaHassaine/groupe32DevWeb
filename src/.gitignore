@@ -1,0 +1,8 @@
+# dotfiles
+.*
+!.gitignore
+# compiled python files
+*.py[co]
+__pycache__/
+# db
+db.sqlite3
