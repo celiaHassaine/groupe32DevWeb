@@ -1,5 +1,6 @@
 #from django.shortcuts import render
 from django.http import HttpResponse
+from .models import News
 
 # Create your views here.
 
@@ -8,7 +9,8 @@ def index(request):
     return HttpResponse(message)
 
 def listing(request):
-    news = ["<li>{}</li>".format(news['titre']) for news in News]
-    message = """<ul>{}</ul>""".format("\n".join(news))
+    news = News.objects
+    formated_news = ["<li>{}</li>".format(new['titre']) for new in news]
+    message = """<ul>{}</ul>""".format("\n".join(formated_news))
     return HttpResponse(message)
 

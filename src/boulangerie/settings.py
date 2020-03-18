@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'news.apps.NewsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,7 +80,7 @@ DATABASES = {
 	'ENGINE': 'django.db.backends.mysql',
         'NAME': 'nouvelle',
         'USER': 'celia',
-        'PASSWORD': 'Celfamille-007',
+        'PASSWORD': 'Celia1998',
         'HOST': 'localhost',
         'PORT': '',
     }

@@ -6,9 +6,7 @@ from django.db import models
 class News(models.Model):
     titre = models.CharField(max_length=100)
     contenu = models.TextField()
+    img = models.ImageField(upload_to='pics')  # pics sera le nom du dossier ou on cherchera les photos
 
-
-class Fichier(models.Model):
-    chemin = models.URLField()
-    nom = models.CharField(max_length=100)
-    news = models.ForeignKey(News, on_delete=models.CASCADE())
+    def __str__(self):
+        return self.titre
