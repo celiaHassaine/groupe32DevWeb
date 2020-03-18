@@ -1,9 +1,10 @@
-from django.contrib import admin
+from django.conf.urls import url
 from django.urls import path
 
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('nouvelle/', views.listing, name='listing')
+    path('liste/', views.listing, name='listing'),
+    url(r'^search/$', views.search),
 ]
