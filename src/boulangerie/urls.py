@@ -24,7 +24,7 @@ urlpatterns = [
     path('produits/', views.produits, name='produits'),
     path('contact/', views.contact, name='contact'),
     path('commande/', views.commande, name='commande'),
-    path('api/news/', include('news.api.urls')),
+    path('api/news/', include('news.api.urls', namespace='api-news')),
     path('admin/', admin.site.urls),
 ]
 
