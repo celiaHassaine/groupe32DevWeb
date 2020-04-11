@@ -45,3 +45,21 @@ def search(request):
         """.format("</li><li>".join(albums))
 
     return HttpResponse(message)
+
+
+def accueil(request):
+    # TODO replacer par un SELECT dans la table actualite
+    params = {
+        'actualites': [
+            {
+                'titre': "Actu 1: super tarte",
+            },
+            {
+                'titre': "Actu 2: nouveau sandwich",
+                'contenu': "super bon",
+            }
+        ],
+    }
+    return render(request, 'accueil.html', params)
+
+
