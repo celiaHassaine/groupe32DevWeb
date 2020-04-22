@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import News
@@ -10,11 +11,6 @@ from rest_framework_jwt.settings import api_settings
 
 # Create your views here.
 
-def index(request):
-    message = "Salut tout le monde !"
-    return HttpResponse(message)
-
-
 def listing(request):
     news = News.objects.all()
     formated_news = [
@@ -26,7 +22,7 @@ def listing(request):
 
 def listingsansimg(request):
     news = News.objects.all()
-    formated_news = [ "<li>{}<br/>{}</li>".format( album.titre, album.contenu) for album in news]
+    formated_news = ["<li>{}<br/>{}</li>".format(album.titre, album.contenu) for album in news]
     message = """<ul>{}</ul>""".format("\n".join(formated_news))
     return HttpResponse(message)
 
@@ -54,7 +50,7 @@ def search(request):
 
 def accueil(request):
     # TODO replacer par un SELECT dans la table actualite
-    params = {
+    """params = {
         'actualites': [
             {
                 'titre': "Actu 1: super tarte",
@@ -64,13 +60,14 @@ def accueil(request):
                 'contenu': "super bon",
             }
         ],
-    }
-    return render(request, 'accueil.html', params)
+    }"""
+    url = "http://127.0.0.1:8000/api/news/"
+
+    response = requests.get(url)
+    return JsonResponse(response.text, safe=False)
 
 
 def testapi(request, self):
     url = api_reverse("api-news:post-listcreate")
     response = self.client.get(url, data, format='json')
     return JsonResponse(response)
-
-

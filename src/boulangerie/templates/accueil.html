@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div id="magasin">
     <h1>Ceci est notre page d'accueil</h1>
     {% for actualite in actualites %}      
-        <div>
-            <h2>{{ actualite.titre }}</h2>
-            <p>{{ actualite.contenu }}</p>
-        </div>
+    <div>
+        <h2>{{ actualite.titre }}</h2>
+        <p>{{ actualite.contenu }}</p>
+    </div>
+</div>
     {% endfor %}
 {% endblock %}
