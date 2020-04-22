@@ -1,12 +1,13 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        {% load static %}
         <meta charset="UTF-8">
         <title>Boulangerie</title>
-        <script src="{% static 'lib/vue.js' %}"></script>
-        <script src="{% static 'src/js/boulangerie.js' %}"></script>
-        <!---<link type="text/css" href="{% static 'Base.css' %}" /> --->
+        <script src="{% static 'js/vue.js' %}"></script>
+        <script src="{% static 'js/boulangerie.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Base.css' %}">
     </head>
     <body>
         <div id="accueil">
@@ -14,16 +15,19 @@
                 <div id="menu">
                     <ul id="lien_menu">
                         <li  class="lien_menu">
-                            <a href="/">accueil</a>
+                            <a href="/">Accueil</a>
                         </li>
                         <li class="lien_menu">
-                            <a href="/produits">nos produits</a>
+                            <a href="/produits">Nos produits</a>
                         </li>
                         <li class="lien_menu">
-                            <a href="/contact">contact</a>
+                            <a href="/sandwich">Nos sandwich</a>
                         </li>
                         <li class="lien_menu">
-                            <a href="/commande">passer commande</a>
+                            <a href="/contact">Contact</a>
+                        </li>
+                        <li class="lien_menu">
+                            <a href="/commande">Passer commande</a>
                         </li>
                     </ul>
                 </div>
@@ -44,9 +48,10 @@
                         </li>
                         <li class="lien_footer" id="horaire">
                             <div>
+                                <span class="horaire">Lundi fermé</span>
                                 <span class="horaire">Mardi au Samedi de 07h à 18h</span><br></span>
                                 <span class="horaire">Dimanche de 06h30 à 12h30</span><br>
-                                <span class="horaire">Lundi fermé</span>
+
                             </div>
                         </li>
                     </ul>

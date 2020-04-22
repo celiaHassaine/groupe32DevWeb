@@ -26,8 +26,12 @@ urlpatterns = [
     path('produits/', include('produits.urls')),
     path('contact/', views.contact, name='contact'),
     path('commande/', views.commande, name='commande'),
+    path('sandwich/', views.sandwich, name='sandwich'),
     path('api/news/', include('news.api.urls', namespace='api-news')),
     path('admin/', admin.site.urls),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
