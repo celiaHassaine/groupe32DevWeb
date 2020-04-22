@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from .models import News
+from rest_framework import status
+from rest_framework.reverse import reverse as api_reverse
+from django.contrib.auth import get_user_model
+
+from rest_framework_jwt.settings import api_settings
 
 
 # Create your views here.
@@ -61,5 +66,11 @@ def accueil(request):
         ],
     }
     return render(request, 'accueil.html', params)
+
+
+def testapi(request, self):
+    url = api_reverse("api-news:post-listcreate")
+    response = self.client.get(url, data, format='json')
+    return JsonResponse(response)
 
 
