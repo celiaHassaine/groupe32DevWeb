@@ -1,7 +1,3 @@
-/*$http.get('/news/api').then(function(response){
-    console.log(response.data);
-});*/
-
 let produits = [
 	{ nom : "couque au chocolat", prix : 1, quantite : 0},
 	{ nom : "croissant", prix : 1, quantite : 0},
