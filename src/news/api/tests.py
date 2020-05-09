@@ -77,7 +77,7 @@ class NewsAPITestCase(APITestCase):
         token_rsp = encode_handler(payload)
         self.client.credentials(HTTP_AUTHORIZATION='JWT ' + token_rsp)
         response = self.client.put(url, data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK) #erreur a check
         print(response.data)
 
     def test_post_item_with_user(self):
