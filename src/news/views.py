@@ -50,7 +50,7 @@ def search(request):
 
 def accueil(request):
     # TODO replacer par un SELECT dans la table actualite
-    """params = {
+    params = {
         'actualites': [
             {
                 'titre': "Actu 1: super tarte",
@@ -60,11 +60,8 @@ def accueil(request):
                 'contenu': "super bon",
             }
         ],
-    }"""
-    url = "http://127.0.0.1:8000/api/news/"
-
-    response = requests.get(url)
-    return JsonResponse(response.text, safe=False)
+    }
+    return render(request, 'accueil.html', params)
 
 
 def testapi(request, self):

@@ -1,0 +1,23 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celiaHassaine/admin2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celiaHassaine/admin2020/issues"
+  },
+  "homepage": "https://github.com/celiaHassaine/admin2020#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "vue-axios": "^2.1.5"
+  }
+}

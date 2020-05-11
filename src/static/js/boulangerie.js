@@ -1,6 +1,9 @@
-/*$http.get('/news/api').then(function(response){
-    console.log(response.data);
-});*/
+
+import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 
 let produits = [
 	{ nom : "couque au chocolat", prix : 1, quantite : 0},
@@ -13,7 +16,7 @@ document.addEventListener('DOMContentLoaded', initialiserPage);
 function initialiserPage() {
 	let vueMagasin = new Vue({
 		delimiters: ['[[', ']]'],
-		el : "#magasin",
+		el : "#commandes",
 		data : {
 			titre : {
 				principal : "Bienvenue sur le site de la boulangerie",
@@ -35,5 +38,20 @@ function initialiserPage() {
 				return produits.reduce(reducer, 0);
 			}
 		},
+	});
+
+	let vueNews = new Vue({
+		delimiters: ['[[', ']]'],
+		el : "#magasin",
+		data (){
+		    return{
+		        info: null
+		    }
+		},
+		mounted (){
+		    axios
+		        .get("http://127.0.0.1:8000/api/news/")
+		        .then(response=> (this.info = response.data.bpi))
+		}
 	});
 }
