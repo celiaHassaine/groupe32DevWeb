@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import environ;
+
+env = environ.Env (
+     NAME = (str, "boulangerie"),
+     USER = (str, "root"),
+     PASSWORD = (str, "password"),
+     HOST = (str, "localhost"),
+)
+
+environ.Env.read_env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,10 +86,10 @@ WSGI_APPLICATION = 'boulangerie.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nouvelle',
-        'USER': 'celia',
-        'PASSWORD': 'Celia1998',
-        'HOST': 'localhost',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
         'PORT': '',
     }
 }
