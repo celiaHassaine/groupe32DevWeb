@@ -40,7 +40,7 @@ function initialiserPage() {
 		},
 	});
 
-	let vueNews = new Vue({
+	/*let vueNews = new Vue({
 		delimiters: ['[[', ']]'],
 		el : "#magasin",
 		data (){
@@ -53,5 +53,5 @@ function initialiserPage() {
 		        .get("http://127.0.0.1:8000/api/news/")
 		        .then(response=> (this.info = response.data.bpi))
 		}
-	});
+	});*/
 }

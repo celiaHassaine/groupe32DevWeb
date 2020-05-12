@@ -62,9 +62,3 @@ def accueil(request):
         ],
     }
     return render(request, 'accueil.html', params)
-
-
-def testapi(request, self):
-    url = api_reverse("api-news:post-listcreate")
-    response = self.client.get(url, data, format='json')
-    return JsonResponse(response)

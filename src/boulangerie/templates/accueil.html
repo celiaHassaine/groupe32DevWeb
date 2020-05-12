@@ -5,15 +5,15 @@
 {% verbatim %}
 
 <div id="magasin">
-    <!---<h1>Ceci est notre page d'accueil</h1>
-    {% for actualite in actualites %}      
-    <div>
-        <h2>{{ actualite.titre }}</h2>
-        <p>{{ actualite.contenu }}</p>
-    </div>--->
-    [[ info ]]
+    <h1>Ceci est notre page d'accueil</h1>
+    <div v-for="info in infos">
+        <h2>{{ info.titre }}</h2>
+        <p>{{ info.contenu }}</p>
+    </div>
+    <!---<ul>
+        <li v-for="info in infos">{{ info.titre }}</li>
+    </ul>--->
 </div>
-    <!---{% endfor %}--->
 {% endverbatim %}
 
 {% endblock %}

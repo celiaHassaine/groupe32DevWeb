@@ -5,8 +5,6 @@
     <head>
         <meta charset="UTF-8">
         <title>Boulangerie</title>
-        <script type="module" src="{% static 'js/vue.js' %}"></script>
-        <script type="module" src="{% static 'js/boulangerie.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'css/Base.css' %}">
     </head>
     <body>
@@ -55,13 +53,11 @@
                             </div>
                         </li>
                     </ul>
-
-
-
-
-
                 </div>
             </footer>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="{% static 'js/boulangerie.js' %}"></script>
     </body>
 </html>
