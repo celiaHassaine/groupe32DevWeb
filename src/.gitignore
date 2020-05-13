@@ -6,3 +6,7 @@
 __pycache__/
 # db
 db.sqlite3
+# db en local
+boulangerie/.env
+# environnement virtuel
+env
