@@ -21,11 +21,12 @@ from . import views
 
 urlpatterns = [
     path('', include('news.urls')),
-    path('produits/', views.produits, name='produits'),
-    path('contact/', views.contact, name='contact'),
+    path('produits/', include('produits.urls')),
+    path('contact/', include('contact.urls')),
     path('commande/', views.commande, name='commande'),
     path('sandwich/', views.sandwich, name='sandwich'),
     path('api/news/', include('news.api.urls', namespace='api-news')),
+    path('api/contacts/', include('contact.api.urls', namespace='api-contact')),
     path('admin/', admin.site.urls),
 ]
 
