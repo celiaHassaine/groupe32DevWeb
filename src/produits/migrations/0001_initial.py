@@ -13,16 +13,23 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='Categorie',
+            fields=[
+                ('nom', models.CharField(max_length=100)),
+                ('description', models.TextField(blank=True)),
+                ('image', models.ImageField(upload_to='categorie')),
+                ('ordre_tri', models.IntegerField()),
+            ]
+        ),
+        migrations.CreateModel(
             name='Attribut',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nom', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='Commandes',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nomCLient', models.CharField(max_length=50)),
                 ('prenomClient', models.CharField(max_length=50)),
                 ('telephone', models.IntegerField()),
@@ -32,19 +39,17 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='ProdAttr',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('idAttr', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.Attribut')),
             ],
         ),
         migrations.CreateModel(
-            name='Produits',
+            name='Produit',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nomProduits', models.CharField(max_length=100)),
+                ('nom', models.CharField(max_length=100)),
                 ('prix', models.DecimalField(decimal_places=2, max_digits=5)),
-                ('categorie', models.CharField(choices=[('B', 'Boulangerie'), ('FB', 'Fine Boulangerie'), ('PAI', 'Pain'), ('PAT', 'Patisserie'), ('T', 'Tarte')], max_length=3)),
+                ('categorie', models.ForeignKey(to='Categorie', on_delete=models.PROTECT)),
                 ('special', models.BooleanField(default=False)),
-                ('disponible', models.BooleanField(default=True)),
+                ('en_vente', models.BooleanField(default=True)),
                 ('description', models.CharField(max_length=150)),
                 ('ordreTri', models.IntegerField()),
                 ('image', models.ImageField(default='pics/no-img.jpg', upload_to='pics')),
@@ -53,7 +58,6 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Valeur',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nom', models.CharField(max_length=100)),
                 ('idAttr', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.ProdAttr')),
             ],
@@ -61,27 +65,26 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='prodattr',
             name='idProduit',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.Produits'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.Produit'),
         ),
         migrations.CreateModel(
             name='CommProd',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('quantite', models.IntegerField()),
                 ('prixUnitaire', models.DecimalField(decimal_places=2, max_digits=5)),
                 ('prixLigne', models.DecimalField(decimal_places=2, max_digits=5)),
                 ('idCommande', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.Commandes')),
-                ('idProduits', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.Produits')),
+                ('idProduits', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='produits.Produit')),
             ],
         ),
         migrations.AddField(
             model_name='commandes',
             name='idProduits',
-            field=models.ManyToManyField(through='produits.CommProd', to='produits.Produits'),
+            field=models.ManyToManyField(through='produits.CommProd', to='produits.Produit'),
         ),
         migrations.AddField(
             model_name='attribut',
             name='idProd',
-            field=models.ManyToManyField(through='produits.ProdAttr', to='produits.Produits'),
+            field=models.ManyToManyField(through='produits.ProdAttr', to='produits.Produit'),
         ),
     ]

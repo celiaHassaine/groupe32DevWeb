@@ -49,16 +49,7 @@ def search(request):
 
 
 def accueil(request):
-    # TODO replacer par un SELECT dans la table actualite
-    params = {
-        'actualites': [
-            {
-                'titre': "Actu 1: super tarte",
-            },
-            {
-                'titre': "Actu 2: nouveau sandwich",
-                'contenu': "super bon",
-            }
-        ],
-    }
-    return render(request, 'accueil.html', params)
+    actualites = News.objects.order_by('-id')[:3]
+    return render(request, 'accueil.html', {
+        'actualites' : actualites,
+    })

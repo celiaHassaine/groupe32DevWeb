@@ -2,18 +2,14 @@
 
 {% block content %}
 
-{% verbatim %}
-
-<div id="magasin">
+<div class="ListeActualite">
     <h1>Ceci est notre page d'accueil</h1>
-    <div v-for="info in infos">
-        <h2>{{ info.titre }}</h2>
-        <p>{{ info.contenu }}</p>
+    {% for actualite in actualites %}
+    <div>
+        <h2>{{ actualite.titre }}</h2>
+        <p>{{ actualite.contenu }}</p>
     </div>
-    <!---<ul>
-        <li v-for="info in infos">{{ info.titre }}</li>
-    </ul>--->
+    {% endfor %}
 </div>
-{% endverbatim %}
 
 {% endblock %}

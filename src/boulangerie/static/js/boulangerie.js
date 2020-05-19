@@ -39,6 +39,7 @@ var commandes = new Vue ({
     },
 });
 
+/*
 var nouvelle = new Vue({
     el : "#magasin",
     data : {
@@ -55,3 +56,4 @@ var nouvelle = new Vue({
             .finally(() => this.loading = false)
     }
 });
+*/

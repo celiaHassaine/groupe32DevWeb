@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div id="magasin"><h1>Ceci est notre page des produits</h1></div>
+    <div class="ListeProduits">
+    	<h1>Ceci est notre page des produits</h1>
+    	{% for produit in produits %}
+    	<div>
+    		{{ produit.nom }}
+    	</div>
+    	{% endfor %}
+    </div>
 {% endblock %}
-
