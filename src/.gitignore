@@ -10,3 +10,5 @@ db.sqlite3
 boulangerie/.env
 # environnement virtuel
 env
+
+node_modules
