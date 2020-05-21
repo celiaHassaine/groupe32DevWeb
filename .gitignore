@@ -11,3 +11,5 @@ src/boulangerie/.env
 src/env
 # node_modules
 node_modules
+# uploaded files
+src/media/*
