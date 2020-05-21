@@ -1,42 +1,25 @@
-body{
+html{
     background: url("https://s1.1zoom.me/b5050/867/422283-Kycb_1920x1080.jpg") no-repeat center fixed;
+    margin-top: 0px;
+    height: 100%;
+    width: 100%;
 }
-#accueil{
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+/*#accueil{
     background-color: antiquewhite;
     position: absolute ;
     height: 100%;
     width: 50%;
     margin-left: 25%;
-    border: black double 2px;
+    border-radius: 2px;
 
 }
-
-ul#lien_menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    width: 100%;
-}
-
-.lien_menu {
-    float: left;
-    border-right: 1px solid #bbb
-}
-
-.lien_menu a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.lien_menu a:hover:not(.active) {
-    background-color: #4CAF50;
-}
-
 #main{
     height: 80%;
     width: 95%;
@@ -60,7 +43,79 @@ footer ul{
 #horaire{
     float: right;
     margin-right: 0.5%;
+}*/
+
+/*menu (div) global*/
+#accueil{
+    height: 100%;
+    width: 100%;
 }
 
+/*div barre menu top*/
+ul#lien_menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url("https://image.freepik.com/photos-gratuite/fond-bois-naturel_24837-269.jpg");
+    width: 98%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.lien_menu {
+    float: left;
+    border-right: 1px solid #bbb
+}
+
+.lien_menu a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.lien_menu a:hover:not(.active) {
+    background-color: sandybrown;
+}
+
+/*affichage des différentes options*/
+#main{
+    background-color: whitesmoke;
+    border: solid black 3px;
+    border-radius: 10px;
+    height: 75%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+    overflow: auto;
+}
+main::-webkit-scrollbar{
+    display: none;
+}
+
+h2{
+    background-color: gray;
+    border: solid black 1px;
+    border-radius: 10px;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    text-align: center;
+}
+
+/* div bas */
+footer{
+    background-image: url("https://image.freepik.com/photos-gratuite/fond-bois-naturel_24837-269.jpg");
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 
