@@ -1,0 +1,159 @@
+[
+{
+    "model": "produits.categorie",
+    "pk": 1,
+    "fields": {
+        "nom": "Patisserie",
+        "description": "",
+        "image": "",
+        "ordre_tri": 40
+    }
+},
+{
+    "model": "produits.categorie",
+    "pk": 2,
+    "fields": {
+        "nom": "Sandwich",
+        "description": "",
+        "image": "",
+        "ordre_tri": 1
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 1,
+    "fields": {
+        "nom": "Tarte au sucre",
+        "prix": "15.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 2,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 2,
+    "fields": {
+        "nom": "Club",
+        "prix": "4.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 1,
+        "image": ""
+    }
+},
+{
+    "model": "produits.attribut",
+    "pk": 1,
+    "fields": {
+        "nom": "Ingr\u00e9dient"
+    }
+},
+{
+    "model": "produits.attribut",
+    "pk": 2,
+    "fields": {
+        "nom": "Taille"
+    }
+},
+{
+    "model": "produits.attribut",
+    "pk": 3,
+    "fields": {
+        "nom": "Pain"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 1,
+    "fields": {
+        "attribut": 2,
+        "nom": "Petit"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 2,
+    "fields": {
+        "attribut": 2,
+        "nom": "Moyen"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 3,
+    "fields": {
+        "attribut": 2,
+        "nom": "Grand"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 4,
+    "fields": {
+        "attribut": 3,
+        "nom": "Blanc"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 5,
+    "fields": {
+        "attribut": 3,
+        "nom": "Complet"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 6,
+    "fields": {
+        "attribut": 3,
+        "nom": "Gris"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 7,
+    "fields": {
+        "attribut": 1,
+        "nom": "Jambon"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 8,
+    "fields": {
+        "attribut": 1,
+        "nom": "Gouda jeune"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 9,
+    "fields": {
+        "attribut": 1,
+        "nom": "Mayonnaise"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 10,
+    "fields": {
+        "attribut": 1,
+        "nom": "Salade"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 11,
+    "fields": {
+        "attribut": 1,
+        "nom": "Tomate"
+    }
+}
+]
