@@ -11,13 +11,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import environ;
+import environ
 
-env = environ.Env (
-     NAME = (str, "boulangerie"),
-     USER = (str, "root"),
-     PASSWORD = (str, "password"),
-     HOST = (str, "localhost"),
+env = environ.Env(
+    NAME=(str, "boulangerie"),
+    USER=(str, "root"),
+    PASSWORD=(str, "password"),
+    HOST=(str, "localhost"),
 )
 
 environ.Env.read_env()

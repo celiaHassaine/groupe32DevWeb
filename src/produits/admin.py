@@ -3,9 +3,11 @@ from nested_admin import NestedModelAdmin, NestedStackedInline
 
 from .models import Attribut, Valeur, Produit, Commande, ProduitAttribut, Categorie, ProduitAttributValeur
 
+
 class ProduitAttributValeurInline(NestedStackedInline):
     model = ProduitAttributValeur
     extra = 0
+
 
 class ProduitAttributInline(NestedStackedInline):
     model = ProduitAttribut
@@ -13,6 +15,7 @@ class ProduitAttributInline(NestedStackedInline):
     inlines = [
         ProduitAttributValeurInline,
     ]
+
 
 class ProduitAdmin(NestedModelAdmin):
     inlines = [

@@ -2,7 +2,6 @@
 
 from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
-from django.urls import reverse
 
 from rest_framework.reverse import reverse as api_reverse
 
@@ -93,4 +92,3 @@ class CommandeProduit(models.Model):
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
-
