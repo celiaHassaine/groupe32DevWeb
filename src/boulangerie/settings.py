@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'boulangerie',
     'produits',
     'contact',
+    'nested_admin',
 ]
 
 MIDDLEWARE = [

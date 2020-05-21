@@ -1,12 +1,23 @@
 from django.contrib import admin
-from .models import Attribut, Valeur, Produit, Commande, ProduitAttribut, Categorie
+from nested_admin import NestedModelAdmin, NestedStackedInline
 
-# Register your models here.
+from .models import Attribut, Valeur, Produit, Commande, ProduitAttribut, Categorie, ProduitAttributValeur
 
+class ProduitAttributValeurInline(NestedStackedInline):
+    model = ProduitAttributValeur
+    extra = 0
 
-class ProduitAdmin(admin.ModelAdmin):
-    fields = ('nom', 'prix', 'categorie', 'en_vente', 'description', 'image')
-    list_display = ('nom', 'categorie', 'en_vente', 'prix')
+class ProduitAttributInline(NestedStackedInline):
+    model = ProduitAttribut
+    extra = 0
+    inlines = [
+        ProduitAttributValeurInline,
+    ]
+
+class ProduitAdmin(NestedModelAdmin):
+    inlines = [
+        ProduitAttributInline,
+    ]
 
 
 admin.site.register(Categorie)
