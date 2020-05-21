@@ -4,11 +4,9 @@
 # compiled python files
 *.py[co]
 __pycache__/
-# db
-db.sqlite3
 # db en local
-boulangerie/.env
+src/boulangerie/.env
 # environnement virtuel
-env
-
+src/env
+# node_modules
 node_modules
