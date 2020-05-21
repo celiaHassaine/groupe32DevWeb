@@ -6,6 +6,7 @@
 __pycache__/
 # db en local
 src/boulangerie/.env
+!src/boulangerie/.env.example
 # environnement virtuel
 src/env
 # node_modules
