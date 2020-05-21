@@ -4,6 +4,7 @@ from contact.models import Adresse, Contact, Horaire
 
 class AdresseSerializer(serializers.ModelSerializer):  # forms.ModelForm
     url = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Adresse
         fields = [
@@ -37,6 +38,7 @@ class AdresseSerializer(serializers.ModelSerializer):  # forms.ModelForm
 
 class ContactSerializer(serializers.ModelSerializer):  # forms.ModelForm
     url = serializers.SerializerMethodField(read_only=True)
+
     class Meta:
         model = Contact
         fields = [
@@ -46,7 +48,29 @@ class ContactSerializer(serializers.ModelSerializer):  # forms.ModelForm
             'email',
             'adresse',
         ]
-        read_only_fields = ['id']  # bon par exemple pour les données d utilisateur  (voir views pour traiter erreur lors d un post sans utilisateur
+        read_only_fields = [
+            'id']  # bon par exemple pour les données d utilisateur  (voir views pour traiter erreur lors d un post sans utilisateur
+
+    def get_url(self, obj):
+        request = self.context.get("request")
+        return obj.get_api_url(request=request)
+
+
+class HoraireSerializer(serializers.ModelSerializer):
+    url = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = Horaire
+        fields = [
+            'url',
+            'id',
+            'status',
+            'jour',
+            'heureOuverture',
+            'heureFermeture',
+        ]
+        read_only_fields = [
+            'id']  # bon par exemple pour les données d utilisateur  (voir views pour traiter erreur lors d un post sans utilisateur
 
     def get_url(self, obj):
         request = self.context.get("request")
