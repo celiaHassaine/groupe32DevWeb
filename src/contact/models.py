@@ -1,4 +1,7 @@
 from django.db import models
+from django.urls import reverse
+
+from rest_framework.reverse import reverse as api_reverse
 
 # Create your models here.
 
@@ -27,6 +30,13 @@ class Adresse(models.Model):
     def __str__(self):
         return self.rue
 
+    @property
+    def owner(self):
+        return self.user
+
+    def get_api_url(self, request=None):
+        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+
 
 class Contact(models.Model):
     telephone = models.PositiveIntegerField()
@@ -35,6 +45,13 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.id
+
+    @property
+    def owner(self):
+        return self.user
+
+    def get_api_url(self, request=None):
+        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class Horaire(models.Model):
@@ -45,3 +62,11 @@ class Horaire(models.Model):
 
     def __str__(self):
         return self.status + ' ' + self.jour
+
+    @property
+    def owner(self):
+        return self.user
+
+    def get_api_url(self, request=None):
+        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+

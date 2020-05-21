@@ -26,7 +26,7 @@ urlpatterns = [
     path('commande/', views.commande, name='commande'),
     path('sandwich/', views.sandwich, name='sandwich'),
     path('api/news/', include('news.api.urls', namespace='api-news')),
-    path('api/contacts/', include('contact.api.urls', namespace='api-contact')),
+    path('api/contact/', include('contact.api.urls', namespace='api-contact')),
     path('admin/', admin.site.urls),
 ]
 
