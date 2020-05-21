@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='news',
             name='img',
-            field=models.ImageField(default='pics/no-img.jpg', upload_to='pics'),
+            field=models.ImageField(upload_to='news', blank=True),
         ),
     ]
