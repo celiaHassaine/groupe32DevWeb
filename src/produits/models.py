@@ -16,12 +16,8 @@ class Categorie(models.Model):
     def __str__(self):
         return self.nom
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class Produit(models.Model):
@@ -37,12 +33,8 @@ class Produit(models.Model):
     def __str__(self):
         return self.nom
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class Attribut(models.Model):
@@ -52,12 +44,8 @@ class Attribut(models.Model):
     def __str__(self):
         return self.nom
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class Valeur(models.Model):
@@ -67,36 +55,24 @@ class Valeur(models.Model):
     def __str__(self):
         return '%s: %s' % (self.attribut, self.nom)
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class ProduitAttribut(models.Model):
     produit = models.ForeignKey('Produit', CASCADE, related_name='produit_attributs')
     attribut = models.ForeignKey('Attribut', CASCADE)
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class ProduitAttributValeur(models.Model):
     produit_attribut = models.ForeignKey('ProduitAttribut', CASCADE, related_name='produit_attribut_valeurs')
     valeur = models.ForeignKey('Valeur', CASCADE)
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class Commande(models.Model):
@@ -104,12 +80,8 @@ class Commande(models.Model):
     telephone = models.CharField(max_length=50)
     prix_total = models.DecimalField(max_digits=5, decimal_places=2)
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 
 
 class CommandeProduit(models.Model):
@@ -119,10 +91,6 @@ class CommandeProduit(models.Model):
     prix_unitaire = models.DecimalField(max_digits=5, decimal_places=2)
     prix_total = models.DecimalField(max_digits=5, decimal_places=2)
 
-    @property
-    def owner(self):
-        return self.user
-
     def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
 

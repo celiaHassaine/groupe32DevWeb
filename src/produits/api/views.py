@@ -2,9 +2,11 @@
 from django.db.models import Q
 from rest_framework import generics, mixins
 
-from produits.models import Categorie, Produit, Attribut, Valeur, ProduitAttribut, ProduitAttributValeur, Commande, CommandeProduit
+from produits.models import Categorie, Produit, Attribut, Valeur, ProduitAttribut, ProduitAttributValeur, Commande, \
+    CommandeProduit
 from .permissions import IsOwnerOrReadOnly
-from .serializers import CategorieSerializer, ProduitSerializer, AttributSerializer, ValeurSerializer, ProduitAttributSerializer, ProduitAttributValeurSerializer, CommandeSerializer, CommandeProduitSerializer
+from .serializers import CategorieSerializer, ProduitSerializer, AttributSerializer, ValeurSerializer, \
+    ProduitAttributSerializer, ProduitAttributValeurSerializer, CommandeSerializer, CommandeProduitSerializer
 
 
 class CategorieAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailview
@@ -34,7 +36,7 @@ class CategorieAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detail
 class CategorieRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = CategorieSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Categorie.objects.all()
@@ -74,7 +76,7 @@ class ProduitAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
 class ProduitRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = ProduitSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Produit.objects.all()
@@ -114,7 +116,7 @@ class AttributAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailv
 class AttributRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = AttributSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Attribut.objects.all()
@@ -154,7 +156,7 @@ class ValeurAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvie
 class ValeurRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = ValeurSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Valeur.objects.all()
@@ -194,7 +196,8 @@ class ProduitAttributAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # 
 class ProduitAttributRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = ProduitAttributSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+
+    # permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return ProduitAttribut.objects.all()
@@ -234,7 +237,8 @@ class ProduitAttributValeurAPIView(mixins.CreateModelMixin, generics.ListAPIView
 class ProduitAttributValeurRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = ProduitAttributValeurSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+
+    # permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return ProduitAttributValeur.objects.all()
@@ -274,7 +278,8 @@ class CommandeAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailv
 class CommandeRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = CommandeSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+
+    # permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Commande.objects.all()
@@ -314,7 +319,8 @@ class CommandeProduitAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # 
 class CommandeProduitRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = CommandeProduitSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+
+    # permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return CommandeProduit.objects.all()

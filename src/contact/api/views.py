@@ -34,7 +34,7 @@ class AdresseAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
 class AdresseRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = AdresseSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Adresse.objects.all()
@@ -74,7 +74,7 @@ class ContactAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
 class ContactRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = ContactSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Contact.objects.all()
@@ -114,7 +114,7 @@ class HoraireAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
 class HoraireRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
     lookup_field = 'pk'  # (?P<pk>\d+) pk = id
     serializer_class = HoraireSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    #permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
         return Horaire.objects.all()
