@@ -5,8 +5,8 @@
     "fields": {
         "nom": "Patisserie",
         "description": "",
-        "image": "",
-        "ordre_tri": 40
+        "image": "javanais.jpg",
+        "ordre_tri": 50
     }
 },
 {
@@ -20,31 +20,263 @@
     }
 },
 {
-    "model": "produits.produit",
-    "pk": 1,
+    "model": "produits.categorie",
+    "pk": 3,
     "fields": {
-        "nom": "Tarte au sucre",
-        "prix": "15.00",
-        "categorie": 1,
+        "nom": "Pain",
+        "description": "",
+        "image": "Pain_\u00e0_lancienne.jpg",
+        "ordre_tri": 10
+    }
+},
+{
+    "model": "produits.categorie",
+    "pk": 4,
+    "fields": {
+        "nom": "Pain sp\u00e9ciaux",
+        "description": "",
+        "image": "prokorn.jpg",
+        "ordre_tri": 20
+    }
+},
+{
+    "model": "produits.categorie",
+    "pk": 5,
+    "fields": {
+        "nom": "Fine boulangerie",
+        "description": "",
+        "image": "pistolet-sole_.jpg",
+        "ordre_tri": 30
+    }
+},
+{
+    "model": "produits.categorie",
+    "pk": 6,
+    "fields": {
+        "nom": "Viennoiserie",
+        "description": "",
+        "image": "croissant_.jpg",
+        "ordre_tri": 40
+    }
+},
+{
+    "model": "produits.categorie",
+    "pk": 7,
+    "fields": {
+        "nom": "Tarte",
+        "description": "",
+        "image": "passe_trei.jpg",
+        "ordre_tri": 60
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 3,
+    "fields": {
+        "nom": "Carre blanc",
+        "prix": "1.60",
+        "categorie": 3,
         "special": false,
         "en_vente": true,
         "description": "",
-        "ordre_tri": 2,
+        "ordre_tri": 10,
+        "image": "carre_blanc.jpeg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 4,
+    "fields": {
+        "nom": "Carre gris",
+        "prix": "1.60",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 20,
+        "image": "pain_gris.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 5,
+    "fields": {
+        "nom": "Campagne",
+        "prix": "1.60",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 30,
+        "image": "campagne.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 6,
+    "fields": {
+        "nom": "Galette",
+        "prix": "1.60",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 40,
         "image": ""
     }
 },
 {
     "model": "produits.produit",
-    "pk": 2,
+    "pk": 7,
     "fields": {
-        "nom": "Club",
-        "prix": "4.00",
-        "categorie": 2,
+        "nom": "Boulot",
+        "prix": "1.60",
+        "categorie": 3,
         "special": false,
         "en_vente": true,
         "description": "",
-        "ordre_tri": 1,
+        "ordre_tri": 50,
         "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 8,
+    "fields": {
+        "nom": "Maredsous",
+        "prix": "1.60",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 9,
+    "fields": {
+        "nom": "Froment",
+        "prix": "1.60",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 70,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 10,
+    "fields": {
+        "nom": "Tigre",
+        "prix": "1.60",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": "tigre.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 11,
+    "fields": {
+        "nom": "Epautre",
+        "prix": "2.25",
+        "categorie": 3,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 12,
+    "fields": {
+        "nom": "Prokorn",
+        "prix": "2.50",
+        "categorie": 4,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "prokorn_EPtpviq.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 13,
+    "fields": {
+        "nom": "Country",
+        "prix": "2.50",
+        "categorie": 4,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "Country-walkorn.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 14,
+    "fields": {
+        "nom": "Waldcorn",
+        "prix": "2.50",
+        "categorie": 4,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "Country-walkorn_gw5SVyP.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 15,
+    "fields": {
+        "nom": "A l\u2019ancienne",
+        "prix": "1.60",
+        "categorie": 4,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 40,
+        "image": "Pain_\u00e0_lancienne_UUWshPt.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 16,
+    "fields": {
+        "nom": "Multic\u00e9r\u00e9ales",
+        "prix": "2.25",
+        "categorie": 4,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 50,
+        "image": "Multic\u00e9r\u00e9ales.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 17,
+    "fields": {
+        "nom": "Vita plus",
+        "prix": "2.50",
+        "categorie": 4,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": "Pain_vitaplus.jpg"
     }
 },
 {
@@ -58,14 +290,14 @@
     "model": "produits.attribut",
     "pk": 2,
     "fields": {
-        "nom": "Taille"
+        "nom": "Taille tarte"
     }
 },
 {
     "model": "produits.attribut",
-    "pk": 3,
+    "pk": 4,
     "fields": {
-        "nom": "Pain"
+        "nom": "Poids"
     }
 },
 {
@@ -73,15 +305,7 @@
     "pk": 1,
     "fields": {
         "attribut": 2,
-        "nom": "Petit"
-    }
-},
-{
-    "model": "produits.valeur",
-    "pk": 2,
-    "fields": {
-        "attribut": 2,
-        "nom": "Moyen"
+        "nom": "Petite"
     }
 },
 {
@@ -89,31 +313,7 @@
     "pk": 3,
     "fields": {
         "attribut": 2,
-        "nom": "Grand"
-    }
-},
-{
-    "model": "produits.valeur",
-    "pk": 4,
-    "fields": {
-        "attribut": 3,
-        "nom": "Blanc"
-    }
-},
-{
-    "model": "produits.valeur",
-    "pk": 5,
-    "fields": {
-        "attribut": 3,
-        "nom": "Complet"
-    }
-},
-{
-    "model": "produits.valeur",
-    "pk": 6,
-    "fields": {
-        "attribut": 3,
-        "nom": "Gris"
+        "nom": "Grande"
     }
 },
 {
@@ -154,6 +354,254 @@
     "fields": {
         "attribut": 1,
         "nom": "Tomate"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 12,
+    "fields": {
+        "attribut": 4,
+        "nom": "800g"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 13,
+    "fields": {
+        "attribut": 4,
+        "nom": "400g"
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 1,
+    "fields": {
+        "produit": 3,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 2,
+    "fields": {
+        "produit": 4,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 3,
+    "fields": {
+        "produit": 5,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 4,
+    "fields": {
+        "produit": 6,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 5,
+    "fields": {
+        "produit": 7,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 6,
+    "fields": {
+        "produit": 8,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 7,
+    "fields": {
+        "produit": 9,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 8,
+    "fields": {
+        "produit": 10,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 9,
+    "fields": {
+        "produit": 15,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 10,
+    "fields": {
+        "produit": 16,
+        "attribut": 4
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 1,
+    "fields": {
+        "produit_attribut": 1,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 2,
+    "fields": {
+        "produit_attribut": 2,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 3,
+    "fields": {
+        "produit_attribut": 2,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 4,
+    "fields": {
+        "produit_attribut": 1,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 5,
+    "fields": {
+        "produit_attribut": 3,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 6,
+    "fields": {
+        "produit_attribut": 3,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 7,
+    "fields": {
+        "produit_attribut": 4,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 8,
+    "fields": {
+        "produit_attribut": 4,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 9,
+    "fields": {
+        "produit_attribut": 5,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 10,
+    "fields": {
+        "produit_attribut": 5,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 11,
+    "fields": {
+        "produit_attribut": 6,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 12,
+    "fields": {
+        "produit_attribut": 6,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 13,
+    "fields": {
+        "produit_attribut": 7,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 14,
+    "fields": {
+        "produit_attribut": 7,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 15,
+    "fields": {
+        "produit_attribut": 8,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 16,
+    "fields": {
+        "produit_attribut": 8,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 17,
+    "fields": {
+        "produit_attribut": 9,
+        "valeur": 13
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 18,
+    "fields": {
+        "produit_attribut": 9,
+        "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 19,
+    "fields": {
+        "produit_attribut": 10,
+        "valeur": 12
     }
 }
 ]
