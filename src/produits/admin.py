@@ -23,8 +23,19 @@ class ProduitAdmin(NestedModelAdmin):
     ]
 
 
+class ValeurInline(NestedStackedInline):
+    model = Valeur
+    extra = 0
+
+
+class AttributAdmin(NestedModelAdmin):
+    inlines = [
+        ValeurInline,
+    ]
+
+
 admin.site.register(Categorie)
 admin.site.register(Produit, ProduitAdmin)
-admin.site.register(Attribut)
+admin.site.register(Attribut, AttributAdmin)
 admin.site.register(Valeur)
 admin.site.register(Commande)
