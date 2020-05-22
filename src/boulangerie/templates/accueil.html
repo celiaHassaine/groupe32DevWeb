@@ -1,15 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'base_container.html' %}
 
 {% block content %}
 
-<div class="ListeActualite">
-    <h1>Ceci est notre page d'accueil</h1>
-    {% for actualite in actualites %}
-    <div>
-        <h2>{{ actualite.titre }}</h2>
-        <p>{{ actualite.contenu }}</p>
-    </div>
-    {% endfor %}
+<h1>Nos dernières nouvelles</h1>
+{% for actualite in actualites %}
+<div>
+    <h2>{{ actualite.titre }}</h2>
+    <p>{{ actualite.contenu }}</p>
 </div>
+{% endfor %}
 
 {% endblock %}

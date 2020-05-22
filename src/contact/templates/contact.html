@@ -1,24 +1,30 @@
-
-{% extends 'base.html' %}
+{% extends 'base_container.html' %}
 
 {% block content %}
 <div id="magasin">
-    <h2>Horaire</h2>
-        <ul>
-            <li>Le Lundi fermé</li>
-            <li>Du Mardi au Samedi de 07h à 18h</li>
-            <li>Dimanche de 06h30 à 12h30</li>
+    <div class="row">
+        <div class="col-md-6">
+            <h2><i class="far fa-calendar-alt"></i> Horaire</h2>
+            <ul class="list-unstyled">
+                <li>Le Lundi fermé</li>
+                <li>Du Mardi au Samedi de 07h à 18h</li>
+                <li>Dimanche de 06h30 à 12h30</li>
+            </ul>
+        </div>
 
-        </ul>
-    <h2>Contact</h2>
-        <ul>
-            <li><STRONG>Telephone: </STRONG> 010/22.23.92</li>
-            <li><STRONG>Mail: </STRONG> lbotiko.delkeke@gmail.com</li>
-        </ul>
+        <div class="col-md-6">
+            <h2><i class="fas fa-address-book"></i> Contact</h2>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-phone fa-fw"></i> <strong>Telephone :</strong> <a href="tel:+010222392">010/22.23.92</a></li>
+                <li><i class="fas fa-at fa-fw"></i> <strong>Mail :</strong> <a href="mailto:lbotiko.delkeke@gmail.com">lbotiko.delkeke@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+
     <h2>Localisation</h2>
-        <ul>
-            <p><Strong>Adresse:</strong> Rue du tileul 6, 1300 Wavre</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1501.8748920617097!2d4.622661911952538!3d50.72286244811222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4177faffff73d02c!2sNotre%20Dame!5e0!3m2!1sfr!2sbe!4v1587550151517!5m2!1sfr!2sbe" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </ul>
+    <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse :</strong> Rue du tileul 6, 1300 Wavre</p>
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1501.8748920617097!2d4.622661911952538!3d50.72286244811222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4177faffff73d02c!2sNotre%20Dame!5e0!3m2!1sfr!2sbe!4v1587550151517!5m2!1sfr!2sbe" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
 </div>
 {% endblock %}

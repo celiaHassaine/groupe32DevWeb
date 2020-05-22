@@ -4,58 +4,77 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Boulangerie</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/e259ed99ad.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <div id="accueil">
+        <div id="wrap">
             <header>
-                <div id="menu">
-                    <ul id="lien_menu">
-                        <li  class="lien_menu">
-                            <a href="/">Accueil</a>
-                        </li>
-                        <li class="lien_menu">
-                            <a href="/produits">Nos produits</a>
-                        </li>
-                        <li class="lien_menu">
-                            <a href="/sandwich">Nos sandwich</a>
-                        </li>
-                        <li class="lien_menu">
-                            <a href="/contact">Infos</a>
-                        </li>
-                        <li class="lien_menu">
-                            <a href="/commande">Passer commande</a>
-                        </li>
-                    </ul>
-                </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="/">Boulangerie Notre-Dame</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Accueil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/produits">Nos produits</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/sandwich">Nos sandwich</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/contact">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/commande">Passer commande</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </header>
+
             <main id="main">
-                {% block content %}
+                {% block main %}
                 {% endblock %}
             </main>
-            <footer>
-                <div id="footer">
-                    <ul>
-                        <li class="lien_footer">
-                            <div class="infos">
-                                <span>Rue du tilleul 6, 1300 Wavre</span><br>
-                                <span>Téléphone: 010/22.23.92</span>
-                            </div>
 
-                        </li>
-                        <li class="lien_footer" id="horaire">
-                            <div>
-                                <span class="horaire">Lundi fermé</span>
-                                <span class="horaire">Mardi au Samedi de 07h à 18h</span><br></span>
-                                <span class="horaire">Dimanche de 06h30 à 12h30</span><br>
-
-                            </div>
-                        </li>
-                    </ul>
+            <footer class="bg-light py-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><i class="fas fa-address-book"></i> Contact</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt fa-fw"></i> Rue du tilleul 6, 1300 Wavre</li>
+                                <li><i class="fas fa-phone fa-fw"></i> Téléphone: 010/22.23.92</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="far fa-calendar-alt"></i> Horaire</h4>
+                            <ul class="list-unstyled">
+                                <li>Lundi fermé</li>
+                                <li>Mardi au Samedi de 07h à 18h</li>
+                                <li>Dimanche de 06h30 à 12h30</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </footer>
         </div>
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="{% static 'js/boulangerie.js' %}"></script>
