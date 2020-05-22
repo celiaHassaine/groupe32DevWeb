@@ -1,0 +1,30 @@
+{% extends 'produits_container.html' %}
+
+{% block content %}
+    <div>
+    	<h1>Notre offre de produits</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for categorie in categories %}
+            <div class="col mb-4">
+                <div class="card">
+                    {% if categorie.image %}
+                    <div>
+                        <a href="/produits/categorie/{{ categorie.id }}">
+                            <img class="categorie_image" src="{{ categorie.image.url }}" alt="image de {{ categorie.nom }}">
+                        </a>
+                    </div>
+                    {% endif %}
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">
+                            <a href="/produits/categorie/{{ categorie.id }}">{{ categorie.nom }}</a>
+                        </h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

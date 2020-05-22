@@ -1,12 +1,44 @@
-{% extends 'base_container.html' %}
+{% extends 'produits_container.html' %}
 
 {% block content %}
-    <div class="ListeProduits">
-    	<h1>Ceci est notre page des produits</h1>
-    	{% for produit in produits %}
-    	<div>
-    		{{ produit.nom }}
-    	</div>
-    	{% endfor %}
+    <div>
+    	<h1>{{ categorie.nom }}</h1>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Produit</th>
+                        <th></th>
+                        <th>Prix unitaire</th>
+                        <th>Quantité</th>
+                        <th>Prix total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produit in produits %}
+                        <tr>
+                            <td>
+                                {% if produit.image %}
+                                <img class="produit_image" src="{{ produit.image.url }}" alt="image de {{ produit.nom }}">
+                                {% endif %}
+                            </td>
+                            <td>{{ produit.nom }}</td>
+                            <td>Attribut</td>
+                            <td>{{ produit.prix }} €</td>
+                            <td>
+                                <button class="btn btn-secondary">-</button>
+                                <input type="number" min="0">
+                                <button class="btn btn-secondary">+</button>
+                            </td>
+                            <td>total</td>
+                            <td>
+                                <button class="btn btn-primary">ajouter au panier</button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}

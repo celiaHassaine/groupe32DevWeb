@@ -3,12 +3,14 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <title>Boulangerie</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
         <script src="https://kit.fontawesome.com/e259ed99ad.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
+        {% block header %}
+        {% endblock %}
     </head>
     <body>
         <div id="wrap">
@@ -26,7 +28,7 @@
                                     <a class="nav-link" href="/">Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/produits">Nos produits</a>
+                                    <a class="nav-link" href="/produits/categories">Nos produits</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/sandwich">Nos sandwich</a>
