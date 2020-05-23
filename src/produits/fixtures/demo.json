@@ -15,7 +15,7 @@
     "fields": {
         "nom": "Sandwich",
         "description": "",
-        "image": "",
+        "image": "sandwich.jpg",
         "ordre_tri": 1
     }
 },
@@ -280,6 +280,874 @@
     }
 },
 {
+    "model": "produits.produit",
+    "pk": 18,
+    "fields": {
+        "nom": "Pistolet sole",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "pistolet-sole__21KtFY6.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 19,
+    "fields": {
+        "nom": "Pistolet \u00e0 l\u2019ancienne",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 20,
+        "image": "Pistoler_\u00e0_lancienne.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 20,
+    "fields": {
+        "nom": "Pistolet tigre",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 30,
+        "image": "Pistolet_tigre_.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 21,
+    "fields": {
+        "nom": "Pistolet fermier",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 40,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 22,
+    "fields": {
+        "nom": "Pistolet gris",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 50,
+        "image": "Piccolo_gris.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 23,
+    "fields": {
+        "nom": "Pistolet s\u00e9same",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": "Pistolet_s\u00e9same.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 24,
+    "fields": {
+        "nom": "Pistolet pavot",
+        "prix": "0.40",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 70,
+        "image": "Pistolet_pavot.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 25,
+    "fields": {
+        "nom": "Piccolo",
+        "prix": "0.50",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": "Piccolo_blanc.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 26,
+    "fields": {
+        "nom": "Piccolo gris",
+        "prix": "0.50",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": "Piccolo_gris_HZJWBt6.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 27,
+    "fields": {
+        "nom": "Sandwich",
+        "prix": "0.35",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 100,
+        "image": "sandwich_Xyv4h1P.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 28,
+    "fields": {
+        "nom": "Bille blanc",
+        "prix": "0.30",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 110,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 29,
+    "fields": {
+        "nom": "Bille gris",
+        "prix": "0.30",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 120,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 30,
+    "fields": {
+        "nom": "Bille s\u00e9same",
+        "prix": "-0.30",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 130,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 31,
+    "fields": {
+        "nom": "Bille pavot",
+        "prix": "0.30",
+        "categorie": 5,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 140,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 32,
+    "fields": {
+        "nom": "Pain au chocolat",
+        "prix": "1.00",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "pain_choco.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 33,
+    "fields": {
+        "nom": "Pain au chocolat nap\u00e9",
+        "prix": "1.10",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 20,
+        "image": "Pain_choco_nap\u00e9.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 34,
+    "fields": {
+        "nom": "Pain au chocolat cote d'or",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 30,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 35,
+    "fields": {
+        "nom": "Pain choco nutella",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 40,
+        "image": "pain_choco_mcayfuT.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 36,
+    "fields": {
+        "nom": "Croissant",
+        "prix": "1.00",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 50,
+        "image": "croissant__HLQMm2W.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 37,
+    "fields": {
+        "nom": "Croissant non sucr\u00e9",
+        "prix": "1.00",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": "croissant__pnh3J1P.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 38,
+    "fields": {
+        "nom": "Croissant amande",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 70,
+        "image": "croissant_amandes_.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 39,
+    "fields": {
+        "nom": "Beurre raisin",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 40,
+    "fields": {
+        "nom": "Gosette cerise",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": "Gosette_.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 41,
+    "fields": {
+        "nom": "Gosette pomme",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 100,
+        "image": "Gosette__r1wv0RK.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 42,
+    "fields": {
+        "nom": "Gosette abricot",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 110,
+        "image": "Gosette__7B1psrg.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 43,
+    "fields": {
+        "nom": "Coin cerise",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 120,
+        "image": "Coin.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 44,
+    "fields": {
+        "nom": "Coin pomme",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 130,
+        "image": "Coin_wez8Ydp.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 45,
+    "fields": {
+        "nom": "Coin abricot",
+        "prix": "1.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 140,
+        "image": "Coin_dX3e829.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 46,
+    "fields": {
+        "nom": "Tortillon",
+        "prix": "2.00",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 150,
+        "image": "Tortillon.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 47,
+    "fields": {
+        "nom": "Pav\u00e9 choco",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 160,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 48,
+    "fields": {
+        "nom": "Pav\u00e9 amandes",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 170,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 49,
+    "fields": {
+        "nom": "Boule de Berlin",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 180,
+        "image": "Boule_de_Berlin.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 50,
+    "fields": {
+        "nom": "Suisse longue",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 190,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 51,
+    "fields": {
+        "nom": "Suisse ronde",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 200,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 52,
+    "fields": {
+        "nom": "Eclair choco",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 210,
+        "image": "eclair_choco.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 53,
+    "fields": {
+        "nom": "Glace",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 220,
+        "image": "Glace_.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 54,
+    "fields": {
+        "nom": "Huit \u00e0 la cr\u00e8me",
+        "prix": "3.00",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 230,
+        "image": "huit_\u00e0_la_cr\u00e8me.jpeg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 55,
+    "fields": {
+        "nom": "Cornet",
+        "prix": "2.50",
+        "categorie": 6,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 240,
+        "image": "Cornet_.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 56,
+    "fields": {
+        "nom": "Merveilleux",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "Merveilleux.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 57,
+    "fields": {
+        "nom": "Javanais",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 20,
+        "image": "javanais_ioLMk6s.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 58,
+    "fields": {
+        "nom": "Moka",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 30,
+        "image": "Moka.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 59,
+    "fields": {
+        "nom": "Linzer abricot",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 40,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 60,
+    "fields": {
+        "nom": "Linzer prune",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 50,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 61,
+    "fields": {
+        "nom": "Eclair cr\u00e8me fraiche",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": "\u00e9clair_creme_fraiche.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 62,
+    "fields": {
+        "nom": "Choux cr\u00e8me fraiche",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 70,
+        "image": "choux.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 63,
+    "fields": {
+        "nom": "Tartelette fraise",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": "tartelette_fraise.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 64,
+    "fields": {
+        "nom": "Tartelette framboise",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": "tartelette_framboise.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 65,
+    "fields": {
+        "nom": "Tartelette Fruit",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": "tartelette_fruit.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 66,
+    "fields": {
+        "nom": "Moka pralin\u00e9",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 110,
+        "image": "Moka_r4pa8Q4.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 67,
+    "fields": {
+        "nom": "Saint honor\u00e9",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 120,
+        "image": "saint_hono\u00e9r.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 68,
+    "fields": {
+        "nom": "Cygne",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 130,
+        "image": "Cygne.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 69,
+    "fields": {
+        "nom": "Sucre Blanche",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 70,
+    "fields": {
+        "nom": "Sucre Brune",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 20,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 71,
+    "fields": {
+        "nom": "Fromage",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 30,
+        "image": "tarte_fromage_.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 72,
+    "fields": {
+        "nom": "Riz",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 40,
+        "image": "tarte_au_riz.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 73,
+    "fields": {
+        "nom": "2 Fruits",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 50,
+        "image": "tarte_aux_fruit.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 74,
+    "fields": {
+        "nom": "4 Fruits",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": "tarte_aux_fruit_DkZmQuZ.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 75,
+    "fields": {
+        "nom": "Fruits",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 70,
+        "image": "tarte_aux_fruit_JvsYW1n.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 76,
+    "fields": {
+        "nom": "Passe trei",
+        "prix": "7.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": "passe_trei_UdbKmnk.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 77,
+    "fields": {
+        "nom": "Br\u00e9silienne",
+        "prix": "12.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": "bresilienne.jpg"
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 78,
+    "fields": {
+        "nom": "Esquimaux",
+        "prix": "12.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 100,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 79,
+    "fields": {
+        "nom": "Cro\u00fbte Fraise",
+        "prix": "12.00",
+        "categorie": 7,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": "croute_fraise_.jpg"
+    }
+},
+{
     "model": "produits.attribut",
     "pk": 1,
     "fields": {
@@ -453,6 +1321,94 @@
     }
 },
 {
+    "model": "produits.produitattribut",
+    "pk": 11,
+    "fields": {
+        "produit": 69,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 12,
+    "fields": {
+        "produit": 70,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 13,
+    "fields": {
+        "produit": 71,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 14,
+    "fields": {
+        "produit": 72,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 15,
+    "fields": {
+        "produit": 73,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 16,
+    "fields": {
+        "produit": 74,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 17,
+    "fields": {
+        "produit": 75,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 18,
+    "fields": {
+        "produit": 76,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 19,
+    "fields": {
+        "produit": 77,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 20,
+    "fields": {
+        "produit": 78,
+        "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 21,
+    "fields": {
+        "produit": 79,
+        "attribut": 2
+    }
+},
+{
     "model": "produits.produitattributvaleur",
     "pk": 1,
     "fields": {
@@ -602,6 +1558,182 @@
     "fields": {
         "produit_attribut": 10,
         "valeur": 12
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 20,
+    "fields": {
+        "produit_attribut": 11,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 21,
+    "fields": {
+        "produit_attribut": 11,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 22,
+    "fields": {
+        "produit_attribut": 12,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 23,
+    "fields": {
+        "produit_attribut": 12,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 24,
+    "fields": {
+        "produit_attribut": 13,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 25,
+    "fields": {
+        "produit_attribut": 13,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 26,
+    "fields": {
+        "produit_attribut": 14,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 27,
+    "fields": {
+        "produit_attribut": 14,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 28,
+    "fields": {
+        "produit_attribut": 15,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 29,
+    "fields": {
+        "produit_attribut": 15,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 30,
+    "fields": {
+        "produit_attribut": 16,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 31,
+    "fields": {
+        "produit_attribut": 16,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 32,
+    "fields": {
+        "produit_attribut": 17,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 33,
+    "fields": {
+        "produit_attribut": 17,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 34,
+    "fields": {
+        "produit_attribut": 18,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 35,
+    "fields": {
+        "produit_attribut": 18,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 36,
+    "fields": {
+        "produit_attribut": 19,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 37,
+    "fields": {
+        "produit_attribut": 19,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 38,
+    "fields": {
+        "produit_attribut": 20,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 39,
+    "fields": {
+        "produit_attribut": 20,
+        "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 40,
+    "fields": {
+        "produit_attribut": 21,
+        "valeur": 1
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 41,
+    "fields": {
+        "produit_attribut": 21,
+        "valeur": 3
     }
 }
 ]
