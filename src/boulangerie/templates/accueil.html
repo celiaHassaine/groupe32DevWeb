@@ -2,6 +2,41 @@
 
 {% block content %}
 
+<div id="carouselExampleIndicators" class="carousel slide text-center" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for categorie in categories %}
+            {% if categorie.image %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %} active {% endif %} bg-dark"></li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for categorie in categories %}
+            {% if categorie.image %}
+                <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                    <div>
+                        <a href="/produits/categorie/{{ categorie.id }}">
+                            <h4>{{ categorie.nom }}</h4>
+                            <img src=" {{ categorie.image.url }}" style="height: 250px;" alt="image de {{ categorie.nom }}">
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <div class="bg-dark p-2">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </div>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <div class="bg-dark p-2">
+            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </div>
+    </a>
+</div>
 <h1>Nos dernières nouvelles</h1>
 {% for actualite in actualites %}
 <div>
