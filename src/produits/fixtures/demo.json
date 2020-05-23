@@ -1148,6 +1148,146 @@
     }
 },
 {
+    "model": "produits.produit",
+    "pk": 80,
+    "fields": {
+        "nom": "Club",
+        "prix": "3.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 10,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 81,
+    "fields": {
+        "nom": "Am\u00e9ricain",
+        "prix": "3.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 20,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 82,
+    "fields": {
+        "nom": "Thon mayonnaise",
+        "prix": "3.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 30,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 83,
+    "fields": {
+        "nom": "Thon piquant",
+        "prix": "3.00",
+        "categorie": 1,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 84,
+    "fields": {
+        "nom": "Pitta",
+        "prix": "3.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 50,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 85,
+    "fields": {
+        "nom": "Pitta piquant",
+        "prix": "3.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 60,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 86,
+    "fields": {
+        "nom": "Rosette",
+        "prix": "3.00",
+        "categorie": 2,
+        "special": false,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 80,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 87,
+    "fields": {
+        "nom": "Sicilien",
+        "prix": "4.50",
+        "categorie": 2,
+        "special": true,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 88,
+    "fields": {
+        "nom": "Kekebagna",
+        "prix": "4.50",
+        "categorie": 2,
+        "special": true,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 90,
+        "image": ""
+    }
+},
+{
+    "model": "produits.produit",
+    "pk": 89,
+    "fields": {
+        "nom": "Parrain",
+        "prix": "4.50",
+        "categorie": 2,
+        "special": true,
+        "en_vente": true,
+        "description": "",
+        "ordre_tri": 100,
+        "image": ""
+    }
+},
+{
     "model": "produits.attribut",
     "pk": 1,
     "fields": {
@@ -1210,22 +1350,6 @@
 },
 {
     "model": "produits.valeur",
-    "pk": 10,
-    "fields": {
-        "attribut": 1,
-        "nom": "Salade"
-    }
-},
-{
-    "model": "produits.valeur",
-    "pk": 11,
-    "fields": {
-        "attribut": 1,
-        "nom": "Tomate"
-    }
-},
-{
-    "model": "produits.valeur",
     "pk": 12,
     "fields": {
         "attribut": 4,
@@ -1238,6 +1362,182 @@
     "fields": {
         "attribut": 4,
         "nom": "400g"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 14,
+    "fields": {
+        "attribut": 1,
+        "nom": "Crudit\u00e9"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 15,
+    "fields": {
+        "attribut": 1,
+        "nom": "Am\u00e9ricain"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 17,
+    "fields": {
+        "attribut": 1,
+        "nom": "P\u00eache"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 18,
+    "fields": {
+        "attribut": 1,
+        "nom": "Thon"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 19,
+    "fields": {
+        "attribut": 1,
+        "nom": "Thon piquant"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 20,
+    "fields": {
+        "attribut": 1,
+        "nom": "Salade de pitta"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 21,
+    "fields": {
+        "attribut": 1,
+        "nom": "Salade de pitta piquante"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 22,
+    "fields": {
+        "attribut": 1,
+        "nom": "Rosette"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 23,
+    "fields": {
+        "attribut": 1,
+        "nom": "Sauce au choix"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 24,
+    "fields": {
+        "attribut": 1,
+        "nom": "Jambon de Parme"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 25,
+    "fields": {
+        "attribut": 1,
+        "nom": "Tomate s\u00e8ch\u00e9e"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 26,
+    "fields": {
+        "attribut": 1,
+        "nom": "Pesto"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 27,
+    "fields": {
+        "attribut": 1,
+        "nom": "Mozzarella"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 28,
+    "fields": {
+        "attribut": 1,
+        "nom": "Ch\u00e8vre"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 29,
+    "fields": {
+        "attribut": 1,
+        "nom": "Miel"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 30,
+    "fields": {
+        "attribut": 1,
+        "nom": "Roquette"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 31,
+    "fields": {
+        "attribut": 1,
+        "nom": "Noix"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 32,
+    "fields": {
+        "attribut": 1,
+        "nom": "Hamburger"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 33,
+    "fields": {
+        "attribut": 1,
+        "nom": "Cheddar"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 34,
+    "fields": {
+        "attribut": 1,
+        "nom": "Tomate"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 35,
+    "fields": {
+        "attribut": 1,
+        "nom": "Salade"
+    }
+},
+{
+    "model": "produits.valeur",
+    "pk": 36,
+    "fields": {
+        "attribut": 1,
+        "nom": "Oignon frit"
     }
 },
 {
@@ -1406,6 +1706,86 @@
     "fields": {
         "produit": 79,
         "attribut": 2
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 22,
+    "fields": {
+        "produit": 80,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 23,
+    "fields": {
+        "produit": 81,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 24,
+    "fields": {
+        "produit": 82,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 25,
+    "fields": {
+        "produit": 83,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 26,
+    "fields": {
+        "produit": 84,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 27,
+    "fields": {
+        "produit": 85,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 28,
+    "fields": {
+        "produit": 86,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 29,
+    "fields": {
+        "produit": 87,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 30,
+    "fields": {
+        "produit": 88,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 31,
+    "fields": {
+        "produit": 89,
+        "attribut": 1
     }
 },
 {
@@ -1734,6 +2114,262 @@
     "fields": {
         "produit_attribut": 21,
         "valeur": 3
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 42,
+    "fields": {
+        "produit_attribut": 22,
+        "valeur": 7
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 43,
+    "fields": {
+        "produit_attribut": 22,
+        "valeur": 8
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 44,
+    "fields": {
+        "produit_attribut": 22,
+        "valeur": 9
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 45,
+    "fields": {
+        "produit_attribut": 22,
+        "valeur": 14
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 46,
+    "fields": {
+        "produit_attribut": 23,
+        "valeur": 14
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 47,
+    "fields": {
+        "produit_attribut": 23,
+        "valeur": 15
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 48,
+    "fields": {
+        "produit_attribut": 24,
+        "valeur": 9
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 49,
+    "fields": {
+        "produit_attribut": 24,
+        "valeur": 17
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 50,
+    "fields": {
+        "produit_attribut": 24,
+        "valeur": 18
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 51,
+    "fields": {
+        "produit_attribut": 25,
+        "valeur": 14
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 52,
+    "fields": {
+        "produit_attribut": 25,
+        "valeur": 19
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 53,
+    "fields": {
+        "produit_attribut": 26,
+        "valeur": 20
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 54,
+    "fields": {
+        "produit_attribut": 26,
+        "valeur": 14
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 55,
+    "fields": {
+        "produit_attribut": 27,
+        "valeur": 21
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 56,
+    "fields": {
+        "produit_attribut": 27,
+        "valeur": 14
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 57,
+    "fields": {
+        "produit_attribut": 28,
+        "valeur": 22
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 58,
+    "fields": {
+        "produit_attribut": 28,
+        "valeur": 14
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 59,
+    "fields": {
+        "produit_attribut": 28,
+        "valeur": 23
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 60,
+    "fields": {
+        "produit_attribut": 29,
+        "valeur": 24
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 61,
+    "fields": {
+        "produit_attribut": 29,
+        "valeur": 25
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 62,
+    "fields": {
+        "produit_attribut": 29,
+        "valeur": 26
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 63,
+    "fields": {
+        "produit_attribut": 29,
+        "valeur": 27
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 64,
+    "fields": {
+        "produit_attribut": 30,
+        "valeur": 28
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 65,
+    "fields": {
+        "produit_attribut": 30,
+        "valeur": 29
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 66,
+    "fields": {
+        "produit_attribut": 30,
+        "valeur": 30
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 67,
+    "fields": {
+        "produit_attribut": 30,
+        "valeur": 31
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 68,
+    "fields": {
+        "produit_attribut": 31,
+        "valeur": 32
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 69,
+    "fields": {
+        "produit_attribut": 31,
+        "valeur": 33
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 70,
+    "fields": {
+        "produit_attribut": 31,
+        "valeur": 35
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 71,
+    "fields": {
+        "produit_attribut": 31,
+        "valeur": 36
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 72,
+    "fields": {
+        "produit_attribut": 31,
+        "valeur": 23
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 73,
+    "fields": {
+        "produit_attribut": 31,
+        "valeur": 34
     }
 }
 ]
