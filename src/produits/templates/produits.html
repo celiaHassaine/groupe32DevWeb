@@ -3,42 +3,51 @@
 {% block content %}
     <div>
     	<h1>{{ categorie.nom }}</h1>
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th colspan="2">Produit</th>
-                        <th></th>
-                        <th>Prix unitaire</th>
-                        <th>Quantité</th>
-                        <th>Prix total</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for produit in produits %}
-                        <tr>
-                            <td>
-                                {% if produit.image %}
-                                <img class="produit_image" src="{{ produit.image.url }}" alt="image de {{ produit.nom }}">
-                                {% endif %}
-                            </td>
-                            <td>{{ produit.nom }}</td>
-                            <td>Attribut</td>
-                            <td>{{ produit.prix }} €</td>
-                            <td>
-                                <button class="btn btn-secondary">-</button>
-                                <input type="number" min="0">
-                                <button class="btn btn-secondary">+</button>
-                            </td>
-                            <td>total</td>
-                            <td>
-                                <button class="btn btn-primary">ajouter au panier</button>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for produit in produits %}
+                <div class="col mb-4">
+                    <div class="card">
+                        {% if produit.image %}
+                            <div>
+                                <img class="produit_image" src="{{ produit.image.url }}" alt="image de {{ produit.nom }}"/>
+                            </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produit.nom }}</h5>
+                            <p class="card-text">{{ produit.prix }} €</p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#produit_modal" data-id="{{ produit.id }}">Ajouter au panier</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="modal fade" id="produit_modal" tabindex="-1" role="dialog" aria-labelledby="ajouter au panier" aria-hidden="true">
+            {% verbatim %}
+                <div class="modal-dialog" role="document">
+                    <div v-if="produit.id" >
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ produit.nom }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img class="modal_produit_image" style="height: 150px;" :src="produit.image" :alt="'image de ' + produit.nom"/><br/>
+                                <button class="btn btn-secondary" v-on:click="enlever(produit)">-</button>
+                                <input type="number" min="0" v-model="produit.quantite"/>
+                                <button class="btn btn-secondary" v-on:click="ajouter(produit)">+</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Continuer les achats</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Aller au panier</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endverbatim %}
         </div>
     </div>
 {% endblock %}
+

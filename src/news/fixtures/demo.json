@@ -1,0 +1,12 @@
+[
+{
+    "model": "news.news",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "titre": "Mise en ligne de notre site intenet",
+        "contenu": "Cher client\u00e8le,\r\n\r\nnous vous souhaitons la bienvenue sur notre nouvelle site internet.\r\n\r\nVous pourrez y passer vos commandes et parcourir notre catalogue de produits.\r\n\r\nMerci pour votre fid\u00e9lit\u00e9, \r\n\r\nA bient\u00f4t.",
+        "img": "news/gateaux.jpg"
+    }
+}
+]
