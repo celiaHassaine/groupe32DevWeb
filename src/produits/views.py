@@ -3,7 +3,36 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from .models import Categorie, Produit
+from .models import Categorie, Produit, Commande, CommandeProduit
+
+
+def commande_ajouter(request):
+    uuid = request.COOKIES.get('commande_uuid')
+    commande = Commande.objects.get(uuid=uuid)
+    body = json.loads(request.body)
+    try:
+        commande_produit = commande.commande_produits.get(produit=body.get('produit_id'))
+    except CommandeProduit.DoesNotExist:
+        produit = Produit.objects.get(id=body.get('produit_id'))
+        commande_produit = CommandeProduit.objects.create(produit=produit, commande=commande)
+    commande_produit.quantite = body.get('quantite')
+    commande_produit.save()
+    return JsonResponse({
+        'commande': commande.to_json(),
+    })
+
+
+def commande_detail(request):
+    uuid = request.COOKIES.get('commande_uuid')
+    try:
+        commande = Commande.objects.get(uuid=uuid)
+    except Commande.DoesNotExist:
+        commande = Commande.objects.create()
+    reponse = JsonResponse({
+        'commande': commande.to_json(),
+    })
+    reponse.set_cookie('commande_uuid', commande.uuid, max_age=None, samesite='Strict')
+    return reponse
 
 
 def detail(request):

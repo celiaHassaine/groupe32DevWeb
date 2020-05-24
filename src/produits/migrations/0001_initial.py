@@ -65,6 +65,7 @@ class Migration(migrations.Migration):
                 ('prenomClient', models.CharField(max_length=50)),
                 ('telephone', models.IntegerField()),
                 ('prix_total', models.DecimalField(max_digits=5, decimal_places=2)),
+                ('uuid', models.UUIDField(unique=True)),
             ],
         ),
         migrations.CreateModel(

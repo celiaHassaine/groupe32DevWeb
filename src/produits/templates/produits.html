@@ -15,7 +15,9 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ produit.nom }}</h5>
                             <p class="card-text">{{ produit.prix }} €</p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#produit_modal" data-id="{{ produit.id }}">Ajouter au panier</button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#produit_modal" data-id="{{ produit.id }}">
+                                Ajouter au panier
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -24,7 +26,7 @@
         <div class="modal fade" id="produit_modal" tabindex="-1" role="dialog" aria-labelledby="ajouter au panier" aria-hidden="true">
             {% verbatim %}
                 <div class="modal-dialog" role="document">
-                    <div v-if="produit.id" >
+                    <div v-if="produit" >
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">{{ produit.nom }}</h5>
@@ -34,13 +36,15 @@
                             </div>
                             <div class="modal-body">
                                 <img class="modal_produit_image" style="height: 150px;" :src="produit.image" :alt="'image de ' + produit.nom"/><br/>
-                                <button class="btn btn-secondary" v-on:click="enlever(produit)">-</button>
-                                <input type="number" min="0" v-model="produit.quantite"/>
-                                <button class="btn btn-secondary" v-on:click="ajouter(produit)">+</button>
+                                <p>Actuellement dans le panier: {{ produit.quantite }}</p>
+                                <h6>Modifier la quantité:</h6>
+                                <button class="btn btn-secondary" v-on:click="enlever()">-</button>
+                                <input type="number" min="0" v-model="produit.nouvelle_quantite"/>
+                                <button class="btn btn-secondary" v-on:click="ajouter()">+</button>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Continuer les achats</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Aller au panier</button>
+                                <button type="button" class="btn btn-primary" v-on:click="continuerAchat()">Continuer les achats</button>
+                                <button type="button" class="btn btn-primary" v-on:click="allerPanier()">Aller au panier</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                             </div>
                         </div>

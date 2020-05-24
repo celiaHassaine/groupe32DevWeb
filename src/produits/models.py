@@ -1,4 +1,5 @@
 # Create your models here.
+import uuid
 
 from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
@@ -77,18 +78,32 @@ class ProduitAttributValeur(models.Model):
 class Commande(models.Model):
     nom_client = models.CharField(max_length=100)
     telephone = models.CharField(max_length=50)
-    prix_total = models.DecimalField(max_digits=5, decimal_places=2)
+    prix_total = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-comm", kwargs={'pk': self.pk}, request=request)
 
+    def to_json(self):
+        return {
+            'id': self.id,
+            'produits': [{
+                'id': commande_produit.produit.id,
+                'nom': commande_produit.produit.nom,
+                'image': commande_produit.produit.image.url if commande_produit.produit.image else False,
+                'prix_unitaire': commande_produit.prix_unitaire,
+                'prix_total': commande_produit.prix_total,
+                'quantite': commande_produit.quantite,
+            } for commande_produit in self.commande_produits.all()]
+        }
+
 
 class CommandeProduit(models.Model):
-    commande = models.ForeignKey('Commande', CASCADE)
+    commande = models.ForeignKey('Commande', CASCADE, related_name='commande_produits')
     produit = models.ForeignKey('Produit', PROTECT)
-    quantite = models.IntegerField()
-    prix_unitaire = models.DecimalField(max_digits=5, decimal_places=2)
-    prix_total = models.DecimalField(max_digits=5, decimal_places=2)
+    quantite = models.IntegerField(default=1)
+    prix_unitaire = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    prix_total = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-commprod", kwargs={'pk': self.pk}, request=request)
