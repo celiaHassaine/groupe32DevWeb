@@ -40,7 +40,7 @@ class Contact(models.Model):
     adresse = models.ForeignKey(Adresse, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.id
+        return self.email
 
     def get_api_url(self, request=None):
         return api_reverse("api-contact:post-rud", kwargs={'pk': self.pk}, request=request)

@@ -22,7 +22,7 @@ class AdresseAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -62,7 +62,7 @@ class ContactAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -102,7 +102,7 @@ class HoraireAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)

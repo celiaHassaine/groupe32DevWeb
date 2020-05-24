@@ -16,7 +16,7 @@ class Categorie(models.Model):
         return self.nom
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-cat", kwargs={'pk': self.pk}, request=request)
 
 
 class Produit(models.Model):
@@ -33,7 +33,7 @@ class Produit(models.Model):
         return self.nom
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-prod", kwargs={'pk': self.pk}, request=request)
 
 
 class Attribut(models.Model):
@@ -44,7 +44,7 @@ class Attribut(models.Model):
         return self.nom
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-attr", kwargs={'pk': self.pk}, request=request)
 
 
 class Valeur(models.Model):
@@ -55,7 +55,7 @@ class Valeur(models.Model):
         return '%s: %s' % (self.attribut, self.nom)
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-val", kwargs={'pk': self.pk}, request=request)
 
 
 class ProduitAttribut(models.Model):
@@ -63,7 +63,7 @@ class ProduitAttribut(models.Model):
     attribut = models.ForeignKey('Attribut', CASCADE)
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-prodattr", kwargs={'pk': self.pk}, request=request)
 
 
 class ProduitAttributValeur(models.Model):
@@ -71,7 +71,7 @@ class ProduitAttributValeur(models.Model):
     valeur = models.ForeignKey('Valeur', CASCADE)
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-pav", kwargs={'pk': self.pk}, request=request)
 
 
 class Commande(models.Model):
@@ -80,7 +80,7 @@ class Commande(models.Model):
     prix_total = models.DecimalField(max_digits=5, decimal_places=2)
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-comm", kwargs={'pk': self.pk}, request=request)
 
 
 class CommandeProduit(models.Model):
@@ -91,4 +91,4 @@ class CommandeProduit(models.Model):
     prix_total = models.DecimalField(max_digits=5, decimal_places=2)
 
     def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud", kwargs={'pk': self.pk}, request=request)
+        return api_reverse("api-produits:post-rud-commprod", kwargs={'pk': self.pk}, request=request)

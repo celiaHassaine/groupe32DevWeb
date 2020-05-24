@@ -24,7 +24,7 @@ class CategorieAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detail
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -64,7 +64,7 @@ class ProduitAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvi
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -104,7 +104,7 @@ class AttributAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailv
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -144,7 +144,7 @@ class ValeurAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailvie
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -184,7 +184,7 @@ class ProduitAttributAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # 
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -211,7 +211,7 @@ class ProduitAttributRudView(generics.RetrieveUpdateDestroyAPIView):  # detailvi
 
 
 class ProduitAttributValeurAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailview
-    lookup_field = 'pk'  # (?P<pk>\d+) pk = id
+    lookup_field = 'nom'  # (?P<pk>\d+) pk = id
     serializer_class = ProduitAttributValeurSerializer
 
     def get_queryset(self):
@@ -225,7 +225,7 @@ class ProduitAttributValeurAPIView(mixins.CreateModelMixin, generics.ListAPIView
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -235,7 +235,7 @@ class ProduitAttributValeurAPIView(mixins.CreateModelMixin, generics.ListAPIView
 
 
 class ProduitAttributValeurRudView(generics.RetrieveUpdateDestroyAPIView):  # detailview
-    lookup_field = 'pk'  # (?P<pk>\d+) pk = id
+    lookup_field = 'nom'  # (?P<pk>\d+) pk = id
     serializer_class = ProduitAttributValeurSerializer
 
     # permission_classes = [IsOwnerOrReadOnly]
@@ -266,7 +266,7 @@ class CommandeAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # detailv
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -307,7 +307,7 @@ class CommandeProduitAPIView(mixins.CreateModelMixin, generics.ListAPIView):  # 
         return qss
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)  # Ceci servirait pour ce qui est dans read_only_fields
+        serializer.save()  # Ceci servirait pour ce qui est dans read_only_fields
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
