@@ -1195,7 +1195,7 @@
     "fields": {
         "nom": "Thon piquant",
         "prix": "3.00",
-        "categorie": 1,
+        "categorie": 2,
         "special": false,
         "en_vente": true,
         "description": "",
