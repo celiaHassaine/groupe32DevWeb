@@ -5,6 +5,7 @@
     const commande = {
         id: undefined,
         produits: [],
+        prix_total: 0,
     };
 
     // récupère les données initiales de commande et produits du panier
@@ -17,6 +18,7 @@
      */
     function majCommande(dataCommande) {
         commande.id = dataCommande.id;
+        commande.prix_total = dataCommande.prix_total;
         for (const dataProduit of dataCommande.produits) {
             let produit = commande.produits.find(p => p.id === dataProduit.id);
             if (produit) {
@@ -24,11 +26,12 @@
                 Object.assign(produit, dataProduit);
             } else {
                 // sinon on le crée
-                produit = Object.assign({}, dataProduit);
+                produit = Object.assign({
+                    // nouvelle quantite dans l'interface, non reçue par le serveur
+                    // variable séparée pour permettre d'annuler sans écraser l'ancienne valeur
+                    nouvelle_quantite: dataProduit.quantite
+                }, dataProduit);
                 commande.produits.push(produit);
-                // nouvelle quantite dans l'interface, non reçue par le serveur
-                // variable séparée pour permettre d'annuler sans écraser l'ancienne valeur
-                produit.nouvelle_quantite = produit.quantite;
             }
         }
     }
@@ -39,68 +42,94 @@
     async function postPanier(produit_id, quantite) {
         const response = await axios.post('/produits/commande/ajouter', {
             produit_id,
-            quantite,
+            quantite: parseInt(quantite),
         })
         majCommande(response.data.commande);
     }
 
-    // initialise Vue sur la modal de produit
-    const vm = new Vue ({
-        el: '#produit_modal',
-        data: {
-            produit: undefined, // par défault, modal fermée donc aucun produit
-        },
-        methods: {
-            /**
-             * Ajoute 1 à la nouvelle quantité.
-             */
-            ajouter() {
-                this.produit.nouvelle_quantite++;
+    if ($('#produit_modal').length > 0) {
+        // initialise Vue sur la modal de produit
+        const vm = new Vue ({
+            el: '#produit_modal',
+            data: {
+                produit: undefined, // par défault, modal fermée donc aucun produit
             },
-            /**
-             * Retire 1 à la nouvelle quantité.
-             */
-            enlever() {
-                if(this.produit.nouvelle_quantite > 0) {
-                    this.produit.nouvelle_quantite--;
-                }
+            methods: {
+                /**
+                 * Ajoute 1 à la nouvelle quantité.
+                 */
+                ajouter() {
+                    this.produit.nouvelle_quantite++;
+                },
+                /**
+                 * Retire 1 à la nouvelle quantité.
+                 */
+                enlever() {
+                    if(this.produit.nouvelle_quantite > 0) {
+                        this.produit.nouvelle_quantite--;
+                    }
+                },
+                /**
+                 * Met à jour le panier sur base de la nouvelle quantité, et redirige vers le panier.
+                 */
+                async allerPanier() {
+                    await postPanier(this.produit.id, this.produit.nouvelle_quantite);
+                    window.location.href = "/commande";
+                },
+                /**
+                 * Met à jour le panier sur base de la nouvelle quantité, et ferme la modal.
+                 */
+                async continuerAchat() {
+                    await postPanier(this.produit.id, this.produit.nouvelle_quantite);
+                    $('#produit_modal').modal('hide');
+                },
             },
-            /**
-             * Met à jour le panier sur base de la nouvelle quantité, et redirige vers le panier.
-             */
-            async allerPanier() {
-                await postPanier(this.produit.id, this.produit.nouvelle_quantite);
-                window.location.href = "/commande";
-            },
-            /**
-             * Met à jour le panier sur base de la nouvelle quantité, et ferme la modal.
-             */
-            async continuerAchat() {
-                await postPanier(this.produit.id, this.produit.nouvelle_quantite);
-                $('#produit_modal').modal('hide');
-            },
-        },
-    });
+        });
 
-    // va chercher les données à afficher dans la modal en fonction du produit choisi
-    $('#produit_modal').on('show.bs.modal', async function (ev) {
-        const button = $(ev.relatedTarget);
-        const produit_id = parseInt(button.data('id'));
-        let produit = commande.produits.find(p => p.id === produit_id);
-        if (!produit) {
-            // si le produit n'existe pas encore dans le panier, on l'ajoute avec une quantité 0
-            // (le reste du code de ce fichier ne fonctionne que si le produit est dans le panier)
-            await postPanier(produit_id, 0);
-            produit = commande.produits.find(p => p.id === produit_id);
-        }
-        // cliquer sur "ajout au panier" propose toujours d'augmenter la quantité existante de 1 par défaut
-        produit.nouvelle_quantite = produit.quantite + 1;
-        // indique à Vue quel est le produit à afficher
-        vm.produit = produit;
-    });
+        // va chercher les données à afficher dans la modal en fonction du produit choisi
+        $('#produit_modal').on('show.bs.modal', async function (ev) {
+            const button = $(ev.relatedTarget);
+            const produit_id = parseInt(button.data('id'));
+            let produit = commande.produits.find(p => p.id === produit_id);
+            if (!produit) {
+                // si le produit n'existe pas encore dans le panier, on l'ajoute avec une quantité 0
+                // (le reste du code de ce fichier ne fonctionne que si le produit est dans le panier)
+                await postPanier(produit_id, 0);
+                produit = commande.produits.find(p => p.id === produit_id);
+            }
+            // cliquer sur "ajout au panier" propose toujours d'augmenter la quantité existante de 1 par défaut
+            produit.nouvelle_quantite = produit.quantite + 1;
+            // indique à Vue quel est le produit à afficher
+            vm.produit = produit;
+        });
 
-    // tant que les nouvelles données ne sont pas chargées, ne pas afficher l'ancien produit
-    $('#produit_modal').on('hidden.bs.modal', function (ev) {
-        vm.produit = undefined;
-    });
+        // tant que les nouvelles données ne sont pas chargées, ne pas afficher l'ancien produit
+        $('#produit_modal').on('hidden.bs.modal', function (ev) {
+            vm.produit = undefined;
+        });
+    }
+
+    if ($('#commandes').length > 0) {
+        // initialise Vue sur le panier
+        $('#commandes').removeClass('d-none');
+        var commandes = new Vue ({
+            el: "#commandes",
+            data: {
+                commande,
+            },
+            methods: {
+                ajouter(produit) {
+                    produit.quantite++;
+                    postPanier(produit.id, produit.quantite);
+                },
+
+                enlever(produit) {
+                    if(produit.quantite > 0) {
+                        produit.quantite--;
+                    }
+                    postPanier(produit.id, produit.quantite);
+                },
+            },
+        });
+    }
 })();

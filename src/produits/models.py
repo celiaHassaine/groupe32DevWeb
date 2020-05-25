@@ -3,6 +3,7 @@ import uuid
 
 from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
+from django.forms import ModelForm, DateInput
 
 from rest_framework.reverse import reverse as api_reverse
 
@@ -79,7 +80,9 @@ class Commande(models.Model):
     nom_client = models.CharField(max_length=100)
     telephone = models.CharField(max_length=50)
     prix_total = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    date_recuperation = models.DateField(null=True)
     uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
+    est_validee = models.BooleanField(default=False)
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-comm", kwargs={'pk': self.pk}, request=request)
@@ -94,7 +97,8 @@ class Commande(models.Model):
                 'prix_unitaire': commande_produit.prix_unitaire,
                 'prix_total': commande_produit.prix_total,
                 'quantite': commande_produit.quantite,
-            } for commande_produit in self.commande_produits.all()]
+            } for commande_produit in self.commande_produits.all()],
+            'prix_total': self.prix_total,
         }
 
 
@@ -107,3 +111,12 @@ class CommandeProduit(models.Model):
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-commprod", kwargs={'pk': self.pk}, request=request)
+
+
+class CommandeForm(ModelForm):
+    class Meta:
+        model = Commande
+        fields = ['nom_client', 'telephone', 'date_recuperation']
+        widgets = {
+            'date_recuperation': DateInput(attrs={'type': 'date'})
+        }

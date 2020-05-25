@@ -8,4 +8,5 @@ urlpatterns = [
     path('detail', views.detail),
     path('commande/detail', views.commande_detail),
     path('commande/ajouter', views.commande_ajouter),
+    path('commande/finaliser', views.commande_finaliser),
 ]

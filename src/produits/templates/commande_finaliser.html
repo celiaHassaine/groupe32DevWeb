@@ -1,0 +1,48 @@
+{% extends 'produits_container.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div>
+        {% if commande.est_validee %}
+            <div class="alert alert-success" role="alert">
+                Votre commande a bien été enregistrée.
+            </div>
+        {% endif %}
+        <h2>Résumé de votre commande</h2>
+        <table class="table">
+            <tr>
+                <th>Nom</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+            </tr>
+            {% for commande_produit in commande_produits %}
+                <tr>
+                    <td>{{ commande_produit.produit.nom }}</td>
+                    <td>{{ commande_produit.prix_unitaire }} €</td>
+                    <td>{{ commande_produit.quantite }}</td>
+                    <td>{{ commande_produit.prix_total }} €</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th colspan="3"></th>
+                <th>{{ commande.prix_total }} €</th>
+            </tr>
+        </table>
+        <h2>Vos coordonnées</h2>
+        {% if commande.est_validee %}
+            <ul>
+                <li><strong>Nom :</strong> {{ commande.nom_client }}</li>
+                <li><strong>Téléphone :</strong> {{ commande.telephone }}</li>
+                <li><strong>Date de récupération :</strong> {{ commande.date_recuperation }}</li>
+            </ul>
+        {% else %}
+            <form method="POST">
+                {% csrf_token %}
+                {{ commande_form|crispy }}
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}
