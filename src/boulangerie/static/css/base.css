@@ -20,3 +20,8 @@ html, body {
     -webkit-flex: 1 0 auto;
     flex: 1 0 auto;
 }
+
+.actualite_image {
+    height: 150px;
+    width: auto;
+}

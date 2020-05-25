@@ -37,12 +37,27 @@
         </div>
     </a>
 </div>
-<h1>Nos dernières nouvelles</h1>
-{% for actualite in actualites %}
-<div>
-    <h2>{{ actualite.titre }}</h2>
-    <p>{{ actualite.contenu }}</p>
+
+<h2 class="mt-5">Nos dernières nouvelles</h2>
+
+<div class="row row-cols-1 row-cols-md-3">
+    {% for actualite in actualites %}
+    <div class="col mb-4">
+        <div class="card">
+            {% if actualite.img %}
+            <div class="text-center">
+                <img class="actualite_image" src="{{ actualite.img.url }}" alt="image de {{ actualite.titre }}">
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{ actualite.titre }}
+                </h5>
+                {{ actualite.contenu | linebreaks }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
 {% endblock %}
