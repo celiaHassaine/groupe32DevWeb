@@ -104,7 +104,7 @@ def liste_categories(request):
 
 def categorie(request, categorie_id):
     categorie = Categorie.objects.get(id=categorie_id)
-    produits = categorie.produits.filter(en_vente=True)
+    produits = categorie.produits.filter(en_vente=True).order_by('-special', 'ordre_tri', 'id')
     return render(request, 'produits.html', {
         'categorie': categorie,
         'produits': produits,

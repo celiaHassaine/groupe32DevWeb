@@ -6,15 +6,22 @@
         <div class="row row-cols-1 row-cols-md-3">
             {% for produit in produits %}
                 <div class="col mb-4">
-                    <div class="card">
+                    <div class="card {% if produit.special %} border-primary {% endif %}">
                         {% if produit.image %}
                             <div>
                                 <img class="produit_image" src="{{ produit.image.url }}" alt="image de {{ produit.nom }}"/>
                             </div>
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">{{ produit.nom }}</h5>
-                            <p class="card-text">{{ produit.prix }} €</p>
+                            <h5 class="card-title">
+                                {% if produit.special %}
+                                    <i class="far fa-star" title="{{ categorie.nom }} de la semaine"></i>
+                                {% endif %}
+                                {{ produit.nom }}
+                            </h5>
+                            <p class="card-text">
+                                {{ produit.prix }} €
+                            </p>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#produit_modal" data-id="{{ produit.id }}">
                                 Ajouter au panier
                             </button>
