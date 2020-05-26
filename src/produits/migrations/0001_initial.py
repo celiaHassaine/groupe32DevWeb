@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
                 ('nom', models.CharField(max_length=100)),
                 ('description', models.TextField(blank=True)),
                 ('image', models.ImageField('categorie')),
-                ('ordre_tri', models.IntegerField()),
+                ('ordre_tri', models.IntegerField(default=10)),
             ],
         ),
         migrations.CreateModel(
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('special', models.BooleanField(default=False)),
                 ('en_vente', models.BooleanField(default=True)),
                 ('description', models.CharField(max_length=150)),
-                ('ordre_tri', models.IntegerField()),
+                ('ordre_tri', models.IntegerField(default=10)),
                 ('image', models.ImageField()),
             ],
         ),
