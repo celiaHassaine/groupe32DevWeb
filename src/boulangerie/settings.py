@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'boulangerie',
     'produits',
-    'contact',
     'nested_admin',
     'crispy_forms',
 ]
