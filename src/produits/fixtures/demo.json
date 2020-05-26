@@ -1805,6 +1805,166 @@
     }
 },
 {
+    "model": "produits.produitattribut",
+    "pk": 34,
+    "fields": {
+        "produit": 89,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 35,
+    "fields": {
+        "produit": 89,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 36,
+    "fields": {
+        "produit": 89,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 37,
+    "fields": {
+        "produit": 89,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 38,
+    "fields": {
+        "produit": 89,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 39,
+    "fields": {
+        "produit": 88,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 40,
+    "fields": {
+        "produit": 88,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 41,
+    "fields": {
+        "produit": 88,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 42,
+    "fields": {
+        "produit": 87,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 43,
+    "fields": {
+        "produit": 87,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 44,
+    "fields": {
+        "produit": 87,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 45,
+    "fields": {
+        "produit": 85,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 46,
+    "fields": {
+        "produit": 84,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 47,
+    "fields": {
+        "produit": 83,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 48,
+    "fields": {
+        "produit": 82,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 49,
+    "fields": {
+        "produit": 82,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 50,
+    "fields": {
+        "produit": 81,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 51,
+    "fields": {
+        "produit": 80,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 52,
+    "fields": {
+        "produit": 80,
+        "attribut": 1
+    }
+},
+{
+    "model": "produits.produitattribut",
+    "pk": 53,
+    "fields": {
+        "produit": 80,
+        "attribut": 1
+    }
+},
+{
     "model": "produits.produitattributvaleur",
     "pk": 1,
     "fields": {
@@ -2184,42 +2344,6 @@
 },
 {
     "model": "produits.produitattributvaleur",
-    "pk": 43,
-    "fields": {
-        "produit_attribut": 22,
-        "valeur": 8,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 44,
-    "fields": {
-        "produit_attribut": 22,
-        "valeur": 9,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 45,
-    "fields": {
-        "produit_attribut": 22,
-        "valeur": 14,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 46,
-    "fields": {
-        "produit_attribut": 23,
-        "valeur": 14,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
     "pk": 47,
     "fields": {
         "produit_attribut": 23,
@@ -2229,37 +2353,10 @@
 },
 {
     "model": "produits.produitattributvaleur",
-    "pk": 48,
-    "fields": {
-        "produit_attribut": 24,
-        "valeur": 9,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 49,
-    "fields": {
-        "produit_attribut": 24,
-        "valeur": 17,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
     "pk": 50,
     "fields": {
         "produit_attribut": 24,
         "valeur": 18,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 51,
-    "fields": {
-        "produit_attribut": 25,
-        "valeur": 14,
         "prix_extra": "0.00"
     }
 },
@@ -2283,28 +2380,10 @@
 },
 {
     "model": "produits.produitattributvaleur",
-    "pk": 54,
-    "fields": {
-        "produit_attribut": 26,
-        "valeur": 14,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
     "pk": 55,
     "fields": {
         "produit_attribut": 27,
         "valeur": 21,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 56,
-    "fields": {
-        "produit_attribut": 27,
-        "valeur": 14,
         "prix_extra": "0.00"
     }
 },
@@ -2328,33 +2407,6 @@
 },
 {
     "model": "produits.produitattributvaleur",
-    "pk": 61,
-    "fields": {
-        "produit_attribut": 29,
-        "valeur": 25,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 62,
-    "fields": {
-        "produit_attribut": 29,
-        "valeur": 26,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 63,
-    "fields": {
-        "produit_attribut": 29,
-        "valeur": 27,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
     "pk": 64,
     "fields": {
         "produit_attribut": 30,
@@ -2364,82 +2416,10 @@
 },
 {
     "model": "produits.produitattributvaleur",
-    "pk": 65,
-    "fields": {
-        "produit_attribut": 30,
-        "valeur": 29,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 66,
-    "fields": {
-        "produit_attribut": 30,
-        "valeur": 30,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 67,
-    "fields": {
-        "produit_attribut": 30,
-        "valeur": 31,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
     "pk": 68,
     "fields": {
         "produit_attribut": 31,
         "valeur": 32,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 69,
-    "fields": {
-        "produit_attribut": 31,
-        "valeur": 33,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 70,
-    "fields": {
-        "produit_attribut": 31,
-        "valeur": 35,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 71,
-    "fields": {
-        "produit_attribut": 31,
-        "valeur": 36,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 72,
-    "fields": {
-        "produit_attribut": 31,
-        "valeur": 23,
-        "prix_extra": "0.00"
-    }
-},
-{
-    "model": "produits.produitattributvaleur",
-    "pk": 73,
-    "fields": {
-        "produit_attribut": 31,
-        "valeur": 34,
         "prix_extra": "0.00"
     }
 },
@@ -2460,5 +2440,186 @@
         "valeur": 23,
         "prix_extra": "0.00"
     }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 76,
+    "fields": {
+        "produit_attribut": 34,
+        "valeur": 33,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 77,
+    "fields": {
+        "produit_attribut": 35,
+        "valeur": 35,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 78,
+    "fields": {
+        "produit_attribut": 36,
+        "valeur": 36,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 79,
+    "fields": {
+        "produit_attribut": 37,
+        "valeur": 34,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 80,
+    "fields": {
+        "produit_attribut": 38,
+        "valeur": 23,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 81,
+    "fields": {
+        "produit_attribut": 39,
+        "valeur": 29,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 82,
+    "fields": {
+        "produit_attribut": 40,
+        "valeur": 30,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 83,
+    "fields": {
+        "produit_attribut": 41,
+        "valeur": 31,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 84,
+    "fields": {
+        "produit_attribut": 42,
+        "valeur": 25,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 85,
+    "fields": {
+        "produit_attribut": 43,
+        "valeur": 27,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 86,
+    "fields": {
+        "produit_attribut": 44,
+        "valeur": 26,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 87,
+    "fields": {
+        "produit_attribut": 45,
+        "valeur": 14,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 88,
+    "fields": {
+        "produit_attribut": 46,
+        "valeur": 14,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 89,
+    "fields": {
+        "produit_attribut": 47,
+        "valeur": 14,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 90,
+    "fields": {
+        "produit_attribut": 48,
+        "valeur": 17,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 91,
+    "fields": {
+        "produit_attribut": 49,
+        "valeur": 9,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 92,
+    "fields": {
+        "produit_attribut": 50,
+        "valeur": 14,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 93,
+    "fields": {
+        "produit_attribut": 51,
+        "valeur": 8,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 94,
+    "fields": {
+        "produit_attribut": 52,
+        "valeur": 14,
+        "prix_extra": "0.00"
+    }
+},
+{
+    "model": "produits.produitattributvaleur",
+    "pk": 95,
+    "fields": {
+        "produit_attribut": 53,
+        "valeur": 9,
+        "prix_extra": "0.00"
+    }
+},
 }
 ]
