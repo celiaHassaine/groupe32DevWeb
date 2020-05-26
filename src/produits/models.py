@@ -5,8 +5,6 @@ from django.db import models
 from django.db.models.deletion import CASCADE, PROTECT
 from django.forms import ModelForm, DateInput
 
-from rest_framework.reverse import reverse as api_reverse
-
 
 class Categorie(models.Model):
     nom = models.CharField(max_length=100)
@@ -16,9 +14,6 @@ class Categorie(models.Model):
 
     def __str__(self):
         return self.nom
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-cat", kwargs={'pk': self.pk}, request=request)
 
 
 class Produit(models.Model):
@@ -33,9 +28,6 @@ class Produit(models.Model):
 
     def __str__(self):
         return self.nom
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-prod", kwargs={'pk': self.pk}, request=request)
 
     def validation_valeurs(self, valeur_ids):
         """Chaque produit possède une ou plusieurs combinaisons d'attribut et de valeurs possibles.
@@ -79,9 +71,6 @@ class Attribut(models.Model):
     def __str__(self):
         return self.nom
 
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-attr", kwargs={'pk': self.pk}, request=request)
-
 
 class Valeur(models.Model):
     attribut = models.ForeignKey('Attribut', CASCADE)
@@ -90,25 +79,16 @@ class Valeur(models.Model):
     def __str__(self):
         return '%s: %s' % (self.attribut, self.nom)
 
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-val", kwargs={'pk': self.pk}, request=request)
-
 
 class ProduitAttribut(models.Model):
     produit = models.ForeignKey('Produit', CASCADE, related_name='produit_attributs')
     attribut = models.ForeignKey('Attribut', CASCADE)
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-prodattr", kwargs={'pk': self.pk}, request=request)
 
 
 class ProduitAttributValeur(models.Model):
     produit_attribut = models.ForeignKey('ProduitAttribut', CASCADE, related_name='produit_attribut_valeurs')
     valeur = models.ForeignKey('Valeur', CASCADE)
     prix_extra = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-pav", kwargs={'pk': self.pk}, request=request)
 
     def __str__(self):
         return '%s: %s' % (self.produit_attribut.produit, self.valeur)
@@ -121,9 +101,6 @@ class Commande(models.Model):
     date_recuperation = models.DateField(null=True)
     uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
     est_validee = models.BooleanField(default=False)
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-comm", kwargs={'pk': self.pk}, request=request)
 
     def to_json(self):
         return {
@@ -161,9 +138,6 @@ class CommandeProduit(models.Model):
     quantite = models.IntegerField(default=1)
     prix_unitaire = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     prix_total = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-produits:post-rud-commprod", kwargs={'pk': self.pk}, request=request)
 
     def contient_valeurs(self, produit_attribut_valeurs):
         """Une commande peut contenir plusieurs fois le même produit mais avec des attributs et valeurs

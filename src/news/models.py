@@ -1,12 +1,6 @@
 from django.db import models
 from django.conf import settings
 
-# BONUS django hosts ---> subdomain name for reverse (MIEUX POUR REVERSE)
-
-from rest_framework.reverse import reverse as api_reverse
-
-
-# Create your models here.
 
 class News(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -16,10 +10,3 @@ class News(models.Model):
 
     def __str__(self):
         return self.titre
-
-    @property
-    def owner(self):
-        return self.user
-
-    def get_api_url(self, request=None):
-        return api_reverse("api-news:post-rud", kwargs={'pk': self.pk}, request=request)
