@@ -11,15 +11,22 @@
                     <th>Quantité</th>
                     <th>Total</th>
                 </tr>
-                <tr v-for="produit in commande.produits" v-if="produit.quantite > 0">
-                    <td>{{ produit.nom }}</td>
-                    <td>{{ produit.prix_unitaire }} €</td>
+                <tr v-for="commande_produit in commande.commande_produits" v-if="commande_produit.quantite > 0" :key="commande_produit.id">
                     <td>
-                        <button v-on:click="enlever(produit)">-</button>
-                        <input id="CODE" type="number" min="0" v-model="produit.quantite">
-                        <button v-on:click="ajouter(produit)">+</button>
+                        {{ commande_produit.produit.nom }}
+                        <span v-for="produit_attribut in commande_produit.produit.produit_attributs" :key="produit_attribut.id">
+                            <span v-if="produit_attribut.valeur_selectionee === produit_attribut_valeur.id" v-for="produit_attribut_valeur in produit_attribut.produit_attribut_valeurs" :key="produit_attribut_valeur.id">
+                                <br/>{{ produit_attribut_valeur.nom }}
+                            </span>
+                        </span>
                     </td>
-                    <td>{{ produit.prix_total }} €</td>
+                    <td>{{ commande_produit.prix_unitaire }} €</td>
+                    <td>
+                        <button v-on:click="enlever(commande_produit)">-</button>
+                        <input type="number" min="0" v-model="commande_produit.quantite">
+                        <button v-on:click="ajouter(commande_produit)">+</button>
+                    </td>
+                    <td>{{ commande_produit.prix_total }} €</td>
                 </tr>
                 <tr>
                     <th colspan="3"></th>

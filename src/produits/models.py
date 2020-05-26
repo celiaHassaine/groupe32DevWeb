@@ -37,6 +37,35 @@ class Produit(models.Model):
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-prod", kwargs={'pk': self.pk}, request=request)
 
+    def validation_valeurs(self, valeur_ids):
+        """Chaque produit possède une ou plusieurs combinaisons d'attribut et de valeurs possibles.
+        Le but de cette méthode est de s'assurer que les valeurs reçues en paramètre correspondent
+        exactement à une combinaison possible du produit."""
+        for produit_attribut in self.produit_attributs.all():
+            attribut_ok = False
+            for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all():
+                if produit_attribut_valeur.id in valeur_ids:
+                    if not attribut_ok:
+                        attribut_ok = True
+                    else:
+                        # il est interdit de prendre plusieurs valeurs pour le même attribut
+                        return False
+            if not attribut_ok:
+                # aucune valeur n'a été trouvée pour un attribut
+                return False
+        return True
+
+    def premiere_combinaison_valeurs(self):
+        """Retourne la première combinaison de valeur possible pour ce produit,
+        ce qui revient à prendre la première valeure possible de chaque attribut."""
+        produit_attribut_valeurs = []
+        for produit_attribut in self.produit_attributs.all():
+            for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all():
+                produit_attribut_valeurs.append(produit_attribut_valeur)
+                break
+            break
+        return produit_attribut_valeurs
+
 
 class Attribut(models.Model):
     nom = models.CharField(max_length=100)
@@ -71,9 +100,13 @@ class ProduitAttribut(models.Model):
 class ProduitAttributValeur(models.Model):
     produit_attribut = models.ForeignKey('ProduitAttribut', CASCADE, related_name='produit_attribut_valeurs')
     valeur = models.ForeignKey('Valeur', CASCADE)
+    prix_extra = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-pav", kwargs={'pk': self.pk}, request=request)
+
+    def __str__(self):
+        return '%s: %s' % (self.produit_attribut.produit, self.valeur)
 
 
 class Commande(models.Model):
@@ -90,10 +123,24 @@ class Commande(models.Model):
     def to_json(self):
         return {
             'id': self.id,
-            'produits': [{
-                'id': commande_produit.produit.id,
-                'nom': commande_produit.produit.nom,
-                'image': commande_produit.produit.image.url if commande_produit.produit.image else False,
+            'commande_produits': [{
+                'id': commande_produit.id,
+                'produit': {
+                    'id': commande_produit.produit.id,
+                    'nom': commande_produit.produit.nom,
+                    'image': commande_produit.produit.image.url if commande_produit.produit.image else False,
+                    'prix': commande_produit.produit.prix,
+                    'produit_attributs': [{
+                        'id': produit_attribut.id,
+                        'nom': produit_attribut.attribut.nom,
+                        'valeur_selectionee': commande_produit.produit_attribut_valeurs.get(produit_attribut=produit_attribut).id,
+                        'produit_attribut_valeurs': [{
+                            'id': produit_attribut_valeur.id,
+                            'nom': produit_attribut_valeur.valeur.nom,
+                            'prix_extra': produit_attribut_valeur.prix_extra,
+                        } for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all()],
+                    } for produit_attribut in commande_produit.produit.produit_attributs.all()],
+                },
                 'prix_unitaire': commande_produit.prix_unitaire,
                 'prix_total': commande_produit.prix_total,
                 'quantite': commande_produit.quantite,
@@ -105,12 +152,29 @@ class Commande(models.Model):
 class CommandeProduit(models.Model):
     commande = models.ForeignKey('Commande', CASCADE, related_name='commande_produits')
     produit = models.ForeignKey('Produit', PROTECT)
+    produit_attribut_valeurs = models.ManyToManyField('ProduitAttributValeur')
     quantite = models.IntegerField(default=1)
     prix_unitaire = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     prix_total = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 
     def get_api_url(self, request=None):
         return api_reverse("api-produits:post-rud-commprod", kwargs={'pk': self.pk}, request=request)
+
+    def contient_valeurs(self, produit_attribut_valeurs):
+        """Une commande peut contenir plusieurs fois le même produit mais avec des attributs et valeurs
+        différentes. Le but de cette fonction est de retourner si le CommandeProduit actuel correspond
+        à toutes les valeurs reçues."""
+        valeur_ids = [v.id for v in produit_attribut_valeurs]
+        self_valeur_ids = [v.id for v in self.produit_attribut_valeurs.all()]
+        # toutes les valeurs reçus doivent présentes
+        for valeur_id in valeur_ids:
+            if valeur_id not in self_valeur_ids:
+                return False
+        # toutes les valeurs présentes doivent être reçues
+        for valeur_id in self_valeur_ids:
+            if valeur_id not in valeur_ids:
+                return False
+        return True
 
 
 class CommandeForm(ModelForm):

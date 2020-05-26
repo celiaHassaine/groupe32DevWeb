@@ -8,12 +8,12 @@
                 <div class="col mb-4">
                     <div class="card {% if produit.special %} border-primary {% endif %}">
                         {% if produit.image %}
-                            <div>
+                            <div class="ml-3 mt-3">
                                 <img class="produit_image" src="{{ produit.image.url }}" alt="image de {{ produit.nom }}"/>
                             </div>
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h5 class="card-title text-primary">
                                 {% if produit.special %}
                                     <i class="far fa-star" title="{{ categorie.nom }} de la semaine"></i>
                                 {% endif %}
@@ -21,6 +21,19 @@
                             </h5>
                             <p class="card-text">
                                 {{ produit.prix }} €
+                                {% for produit_attribut in produit.produit_attributs.all %}
+                                    <h6>{{ produit_attribut.attribut.nom }}:</h6>
+                                    <ul>
+                                        {% for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all %}
+                                            <li>
+                                                {{ produit_attribut_valeur.valeur.nom }}
+                                                {% if produit_attribut_valeur.prix_extra %}
+                                                    (+ {{ produit_attribut_valeur.prix_extra }} €)
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
                             </p>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#produit_modal" data-id="{{ produit.id }}">
                                 Ajouter au panier
@@ -33,20 +46,30 @@
         <div class="modal fade" id="produit_modal" tabindex="-1" role="dialog" aria-labelledby="ajouter au panier" aria-hidden="true">
             {% verbatim %}
                 <div class="modal-dialog" role="document">
-                    <div v-if="produit" >
+                    <div v-if="commande_produit" >
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">{{ produit.nom }}</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">{{ commande_produit.produit.nom }}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <img class="modal_produit_image" style="height: 150px;" :src="produit.image" :alt="'image de ' + produit.nom"/><br/>
-                                <p>Actuellement dans le panier: {{ produit.quantite }}</p>
-                                <h6>Modifier la quantité:</h6>
+                                <img class="modal_produit_image" style="height: 150px;" :src="commande_produit.produit.image" :alt="'image de ' + commande_produit.produit.nom"/><br/>
+                                <div v-for="produit_attribut in commande_produit.produit.produit_attributs" :key="produit_attribut.id">
+                                    <h6>{{ produit_attribut.nom }}</h6>
+                                    <div v-for="produit_attribut_valeur in produit_attribut.produit_attribut_valeurs" :key="produit_attribut_valeur.id" class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" :id="'produit_attribut_valeur' + produit_attribut_valeur.id" :name="'produit_attribut' + produit_attribut.id" :value="produit_attribut_valeur.id" v-model="produit_attribut.valeur_selectionee">
+                                        <label class="custom-control-label" :for="'produit_attribut_valeur' + produit_attribut_valeur.id">
+                                            {{ produit_attribut_valeur.nom }}
+                                            <span v-if="produit_attribut_valeur.prix_extra !== '0.00'">(+ {{ produit_attribut_valeur.prix_extra }} €)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <h5 class="mt-4">Modifier la quantité:</h5>
+                                <p>Actuellement dans le panier: {{ commande_produit.quantite }}</p>
                                 <button class="btn btn-secondary" v-on:click="enlever()">-</button>
-                                <input type="number" min="0" v-model="produit.nouvelle_quantite"/>
+                                <input type="number" min="0" v-model="commande_produit.nouvelle_quantite"/>
                                 <button class="btn btn-secondary" v-on:click="ajouter()">+</button>
                             </div>
                             <div class="modal-footer">

@@ -56,6 +56,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('produit_attribut', models.ForeignKey('ProduitAttribut', CASCADE)),
                 ('valeur', models.ForeignKey('Valeur', CASCADE)),
+                ('prix_extra', models.DecimalField(max_digits=5, decimal_places=2)),
             ],
         ),
         migrations.CreateModel(
@@ -75,6 +76,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('commande', models.ForeignKey('Commande', CASCADE)),
                 ('produit', models.ForeignKey('Produit', PROTECT)),
+                ('produit_attribut_valeurs', models.ManyToManyField('ProduitAttributValeur')),
                 ('quantite', models.IntegerField()),
                 ('prix_unitaire', models.DecimalField(max_digits=5, decimal_places=2)),
                 ('prix_total', models.DecimalField(max_digits=5, decimal_places=2)),

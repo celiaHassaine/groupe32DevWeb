@@ -19,7 +19,12 @@
             </tr>
             {% for commande_produit in commande_produits %}
                 <tr>
-                    <td>{{ commande_produit.produit.nom }}</td>
+                    <td>
+                        {{ commande_produit.produit.nom }}
+                        {% for produit_attribut_valeur in commande_produit.produit_attribut_valeurs.all %}
+                            <br/>{{ produit_attribut_valeur.valeur }}
+                        {% endfor %}
+                    </td>
                     <td>{{ commande_produit.prix_unitaire }} €</td>
                     <td>{{ commande_produit.quantite }}</td>
                     <td>{{ commande_produit.prix_total }} €</td>

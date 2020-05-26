@@ -1,7 +1,7 @@
 from django.contrib import admin
 from nested_admin import NestedModelAdmin, NestedStackedInline
 
-from .models import Attribut, Valeur, Produit, Commande, ProduitAttribut, Categorie, ProduitAttributValeur
+from .models import Attribut, Valeur, Produit, Commande, ProduitAttribut, Categorie, ProduitAttributValeur, CommandeProduit
 
 
 class ProduitAttributValeurInline(NestedStackedInline):
@@ -38,4 +38,17 @@ admin.site.register(Categorie)
 admin.site.register(Produit, ProduitAdmin)
 admin.site.register(Attribut, AttributAdmin)
 admin.site.register(Valeur)
-admin.site.register(Commande)
+
+
+class CommandeProduitInline(NestedStackedInline):
+    model = CommandeProduit
+    extra = 0
+
+
+class CommandeAdmin(NestedModelAdmin):
+    inlines = [
+        CommandeProduitInline,
+    ]
+
+
+admin.site.register(Commande, CommandeAdmin)
