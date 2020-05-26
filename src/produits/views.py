@@ -98,7 +98,7 @@ def commande_finaliser(request):
     reponse = render(request, 'commande_finaliser.html', {
         'commande': commande,
         'commande_form': commande_form,
-        'commande_produits': commande.commande_produits.filter(quantite__gt=0),
+        'commande_produits': commande.commande_produits.exclude(quantite=0),
     })
 
     if commande.est_validee:

@@ -11,12 +11,14 @@
                     <th>Quantité</th>
                     <th>Total</th>
                 </tr>
-                <tr v-for="commande_produit in commande.commande_produits" v-if="commande_produit.quantite > 0" :key="commande_produit.id">
+                <tr v-for="commande_produit in commande.commande_produits" v-if="commande_produit.quantite !== 0" :key="commande_produit.id">
                     <td>
                         {{ commande_produit.produit.nom }}
-                        <span v-for="produit_attribut in commande_produit.produit.produit_attributs" :key="produit_attribut.id">
+                        <br v-if="commande_produit.produit.produit_attributs.length > 0"/>
+                        <span v-for="(produit_attribut, index) in commande_produit.produit.produit_attributs" :key="produit_attribut.id">
+                            <span v-if="index !== 0">, </span>
                             <span v-if="produit_attribut.valeur_selectionee === produit_attribut_valeur.id" v-for="produit_attribut_valeur in produit_attribut.produit_attribut_valeurs" :key="produit_attribut_valeur.id">
-                                <br/>{{ produit_attribut_valeur.nom }}
+                                {{ produit_attribut_valeur.nom }}
                             </span>
                         </span>
                     </td>

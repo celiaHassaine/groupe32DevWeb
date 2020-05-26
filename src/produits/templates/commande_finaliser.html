@@ -21,9 +21,15 @@
                 <tr>
                     <td>
                         {{ commande_produit.produit.nom }}
-                        {% for produit_attribut_valeur in commande_produit.produit_attribut_valeurs.all %}
-                            <br/>{{ produit_attribut_valeur.valeur }}
-                        {% endfor %}
+                        {% if commande_produit.produit_attribut_valeurs.count > 0 %}
+                            <br/>
+                        {% endif %}
+                        {% spaceless %}
+                            {% for produit_attribut_valeur in commande_produit.produit_attribut_valeurs.all %}
+                                {% if not forloop.first %}<span>, </span>{% endif %}
+                                <span>{{ produit_attribut_valeur.valeur.nom }}</span>
+                            {% endfor %}
+                        {% endspaceless %}
                     </td>
                     <td>{{ commande_produit.prix_unitaire }} €</td>
                     <td>{{ commande_produit.quantite }}</td>

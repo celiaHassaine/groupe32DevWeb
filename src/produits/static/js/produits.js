@@ -81,6 +81,12 @@
                         this.commande_produit.nouvelle_quantite--;
                     }
                 },
+                produit_attributs_avec_choix() {
+                    return this.commande_produit.produit.produit_attributs.filter(pa => pa.produit_attribut_valeurs.length > 1)
+                },
+                produit_attributs_sans_choix() {
+                    return this.commande_produit.produit.produit_attributs.filter(pa => pa.produit_attribut_valeurs.length <= 1)
+                },
                 /**
                  * Met à jour le panier sur base de la nouvelle quantité, et redirige vers le panier.
                  */
@@ -106,7 +112,7 @@
             if (!commande_produit) {
                 // si le produit n'existe pas encore dans le panier, on l'ajoute avec une quantité 0
                 // (le reste du code de ce fichier ne fonctionne que si le produit est dans le panier)
-                await postPanierPremierProduit(produit_id, -1);
+                await postPanierPremierProduit(produit_id, 0);
                 commande_produit = commande.commande_produits.find(cp => cp.produit.id === produit_id);
             }
             // cliquer sur "ajout au panier" propose toujours d'augmenter la quantité existante de 1 par défaut

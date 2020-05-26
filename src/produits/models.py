@@ -63,8 +63,13 @@ class Produit(models.Model):
             for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all():
                 produit_attribut_valeurs.append(produit_attribut_valeur)
                 break
-            break
         return produit_attribut_valeurs
+
+    def produit_attributs_avec_choix(self):
+        return [pa for pa in self.produit_attributs.all() if len(pa.produit_attribut_valeurs.all()) != 1]
+
+    def produit_attributs_sans_choix(self):
+        return [pa for pa in self.produit_attributs.all() if len(pa.produit_attribut_valeurs.all()) == 1]
 
 
 class Attribut(models.Model):

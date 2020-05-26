@@ -21,19 +21,27 @@
                             </h5>
                             <p class="card-text">
                                 {{ produit.prix }} €
-                                {% for produit_attribut in produit.produit_attributs.all %}
-                                    <h6>{{ produit_attribut.attribut.nom }}:</h6>
-                                    <ul>
-                                        {% for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all %}
-                                            <li>
-                                                {{ produit_attribut_valeur.valeur.nom }}
-                                                {% if produit_attribut_valeur.prix_extra %}
-                                                    (+ {{ produit_attribut_valeur.prix_extra }} €)
-                                                {% endif %}
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endfor %}
+                            </p>
+                            {% for produit_attribut in produit.produit_attributs_avec_choix %}
+                                <h6>{{ produit_attribut.attribut.nom }}:</h6>
+                                <ul>
+                                    {% for produit_attribut_valeur in produit_attribut.produit_attribut_valeurs.all %}
+                                        <li>
+                                            {{ produit_attribut_valeur.valeur.nom }}
+                                            {% if produit_attribut_valeur.prix_extra %}
+                                                (+ {{ produit_attribut_valeur.prix_extra }} €)
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endfor %}
+                            <p>
+                                {% spaceless %}
+                                    {% for produit_attribut in produit.produit_attributs_sans_choix %}
+                                        {% if not forloop.first %}<span>, </span>{% endif %}
+                                        <span>{{ produit_attribut.produit_attribut_valeurs.first.valeur.nom }}</span>
+                                    {% endfor %}
+                                {% endspaceless %}
                             </p>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#produit_modal" data-id="{{ produit.id }}">
                                 Ajouter au panier
@@ -56,7 +64,7 @@
                             </div>
                             <div class="modal-body">
                                 <img class="modal_produit_image" style="height: 150px;" :src="commande_produit.produit.image" :alt="'image de ' + commande_produit.produit.nom"/><br/>
-                                <div v-for="produit_attribut in commande_produit.produit.produit_attributs" :key="produit_attribut.id">
+                                <div v-for="produit_attribut in produit_attributs_avec_choix()" :key="produit_attribut.id">
                                     <h6>{{ produit_attribut.nom }}</h6>
                                     <div v-for="produit_attribut_valeur in produit_attribut.produit_attribut_valeurs" :key="produit_attribut_valeur.id" class="custom-control custom-radio">
                                         <input class="custom-control-input" type="radio" :id="'produit_attribut_valeur' + produit_attribut_valeur.id" :name="'produit_attribut' + produit_attribut.id" :value="produit_attribut_valeur.id" v-model="produit_attribut.valeur_selectionee">
