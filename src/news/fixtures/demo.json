@@ -8,5 +8,15 @@
         "contenu": "Cher client\u00e8le,\r\n\r\nnous vous souhaitons la bienvenue sur notre nouvelle site internet.\r\n\r\nVous pourrez y passer vos commandes et parcourir notre catalogue de produits.\r\n\r\nMerci pour votre fid\u00e9lit\u00e9, \r\n\r\nA bient\u00f4t.",
         "img": "news/gateaux.jpg"
     }
+},
+{
+    "model": "news.news",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "titre": "Mesure suite au CoVID19",
+        "contenu": "Cher clients, \r\n\r\nNotre boulangerie prend tr\u00e8s \u00e0 coeur votre sant\u00e9. Pour cette raison nous vous prions de bien vouloir vous munir d'un masque et de bien respecter les mesures de distanciation lorsque vous nous rendez visite.\r\n\r\nMerci de votre compr\u00e9hension.\r\n\r\nA bientot",
+        "img": ""
+    }
 }
 ]

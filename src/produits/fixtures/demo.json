@@ -997,7 +997,7 @@
     "model": "produits.produit",
     "pk": 69,
     "fields": {
-        "nom": "Sucre Blanche",
+        "nom": "Sucre Blanc",
         "prix": "7.00",
         "categorie": 7,
         "special": false,
@@ -1988,7 +1988,7 @@
     "fields": {
         "produit_attribut": 2,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -1997,7 +1997,7 @@
     "fields": {
         "produit_attribut": 1,
         "valeur": 12,
-        "prix_extra": "0.40"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2015,7 +2015,7 @@
     "fields": {
         "produit_attribut": 3,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2033,7 +2033,7 @@
     "fields": {
         "produit_attribut": 4,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2051,7 +2051,7 @@
     "fields": {
         "produit_attribut": 5,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2069,7 +2069,7 @@
     "fields": {
         "produit_attribut": 6,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2087,7 +2087,7 @@
     "fields": {
         "produit_attribut": 7,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2105,7 +2105,7 @@
     "fields": {
         "produit_attribut": 8,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2123,7 +2123,7 @@
     "fields": {
         "produit_attribut": 9,
         "valeur": 12,
-        "prix_extra": "0.00"
+        "prix_extra": "0.65"
     }
 },
 {
@@ -2150,7 +2150,7 @@
     "fields": {
         "produit_attribut": 11,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2168,7 +2168,7 @@
     "fields": {
         "produit_attribut": 12,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2186,7 +2186,7 @@
     "fields": {
         "produit_attribut": 13,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2204,7 +2204,7 @@
     "fields": {
         "produit_attribut": 14,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2222,7 +2222,7 @@
     "fields": {
         "produit_attribut": 15,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2240,7 +2240,7 @@
     "fields": {
         "produit_attribut": 16,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2258,7 +2258,7 @@
     "fields": {
         "produit_attribut": 17,
         "valeur": 1,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2276,7 +2276,7 @@
     "fields": {
         "produit_attribut": 18,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2294,7 +2294,7 @@
     "fields": {
         "produit_attribut": 19,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2312,7 +2312,7 @@
     "fields": {
         "produit_attribut": 20,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2330,7 +2330,7 @@
     "fields": {
         "produit_attribut": 21,
         "valeur": 3,
-        "prix_extra": "0.00"
+        "prix_extra": "3.00"
     }
 },
 {
@@ -2620,6 +2620,5 @@
         "valeur": 9,
         "prix_extra": "0.00"
     }
-},
 }
 ]
