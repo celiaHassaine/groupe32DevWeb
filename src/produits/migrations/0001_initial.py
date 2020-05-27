@@ -63,7 +63,6 @@ class Migration(migrations.Migration):
             name='Commande',
             fields=[
                 ('nom_client', models.CharField(max_length=100)),
-                ('prenomClient', models.CharField(max_length=50)),
                 ('telephone', models.CharField(max_length=50)),
                 ('prix_total', models.DecimalField(max_digits=5, decimal_places=2)),
                 ('date_recuperation', models.DateField(null=True)),
