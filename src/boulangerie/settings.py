@@ -14,10 +14,13 @@ import os
 import environ
 
 env = environ.Env(
-    NAME=(str, "boulangerie"),
-    USER=(str, "root"),
-    PASSWORD=(str, "password"),
+    ALLOWED_HOST=(str, "notredame.ephec-ti.be"),
+    DEBUG=(bool, False),
     HOST=(str, "localhost"),
+    NAME=(str, "boulangerie"),
+    PASSWORD=(str, "password"),
+    SECRET_KEY=(str, "SECRET_KEY"),
+    USER=(str, "root"),
 )
 
 environ.Env.read_env()
@@ -29,12 +32,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5$q0pr%+m#xu!ukm7+9w85a@&1atg(tglh&61su8ar!bqw71k#'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["notredame.ephec-ti.be"]
+ALLOWED_HOSTS = [env('ALLOWED_HOST')]
 
 # Application definition
 
