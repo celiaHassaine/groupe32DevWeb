@@ -34,7 +34,7 @@ SECRET_KEY = '5$q0pr%+m#xu!ukm7+9w85a@&1atg(tglh&61su8ar!bqw71k#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["notredame.ephec-ti.be"]
 
 # Application definition
 
